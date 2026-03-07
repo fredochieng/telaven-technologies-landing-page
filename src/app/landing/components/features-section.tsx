@@ -1,18 +1,18 @@
 "use client"
 
 import {
+  Code2,
+  Smartphone,
+  Globe,
   BarChart3,
+  Brain,
+  Headphones,
+  ArrowRight,
+  Shield,
   Zap,
   Users,
-  ArrowRight,
-  Database,
-  FolderKanban,
-  DollarSign,
-  Calendar,
-  Shield,
-  Globe,
-  FileDown,
-  Layers
+  TrendingUp,
+  Database
 } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
@@ -21,47 +21,47 @@ import { Image3D } from '@/components/image-3d'
 
 const mainFeatures = [
   {
-    icon: FolderKanban,
-    title: 'Project-Based Management',
-    description: 'Connect actors to projects that run for a defined period. Manage timelines, track progress, and close projects when complete.'
+    icon: Brain,
+    title: 'AI & Machine Learning',
+    description: 'Intelligent solutions including machine learning models, NLP, computer vision, and predictive analytics that automate decisions and unlock new capabilities.'
   },
   {
-    icon: Calendar,
-    title: 'Scheduling & Manual Runs',
-    description: 'Schedule actors to run automatically on a cadence, or trigger them manually from the platform — no Apify console needed.'
+    icon: Database,
+    title: 'Data Solutions',
+    description: 'End-to-end data engineering — pipelines, warehouses, ETL/ELT, and real-time streaming — turning raw data into structured, actionable intelligence.'
   },
   {
-    icon: DollarSign,
-    title: 'Cost Tracking',
-    description: 'Monitor Apify usage costs per actor, per project, and across your entire organization in real time.'
+    icon: Code2,
+    title: 'Costware (Enterprise Software)',
+    description: 'Custom-built ERP, CRM, POS, and business management systems engineered precisely to your workflows, replacing costly off-the-shelf limitations.'
   },
   {
-    icon: Globe,
-    title: 'Public Actor Support',
-    description: 'Sync and run any public Apify actor from the store alongside your own private actors — all from one dashboard.'
+    icon: Smartphone,
+    title: 'Mobile App Development',
+    description: 'Native and cross-platform mobile applications for iOS and Android, built with React Native and Flutter for seamless, high-performance experiences.'
   }
 ]
 
 const secondaryFeatures = [
   {
-    icon: Layers,
-    title: 'Combined Run Data',
-    description: 'Data from multiple runs of the same actor is automatically merged into one unified dataset — a feature most platforms simply don\'t offer.'
+    icon: Globe,
+    title: 'Web Design & Development',
+    description: 'Beautiful, performant websites and web applications — from marketing sites to complex SaaS platforms — built with modern frameworks and best practices.'
   },
   {
-    icon: FileDown,
-    title: 'API & Export Access',
-    description: 'Access your data anywhere via REST API, or export to Excel, CSV, and JSON with a single click.'
+    icon: BarChart3,
+    title: 'Data Analytics & BI',
+    description: 'Interactive dashboards and business intelligence solutions that give you real-time visibility and the insights needed to make faster, smarter decisions.'
   },
   {
-    icon: Users,
-    title: 'Team Workspaces',
-    description: 'Invite members, manage roles, and collaborate on scraping projects together across your organization.'
+    icon: Headphones,
+    title: 'IT Consultancy',
+    description: 'Strategic technology guidance to architect the right solutions, choose the right stack, and navigate digital transformation with confidence.'
   },
   {
     icon: Shield,
-    title: 'Secure by Default',
-    description: 'API keys encrypted, role-based access, and audit logs for every action.'
+    title: 'Enterprise Security & Scale',
+    description: 'Secure, cloud-native architectures designed to meet compliance standards, handle enterprise workloads, and scale with your growth.'
   }
 ]
 
@@ -71,12 +71,12 @@ export function FeaturesSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-2xl text-center mb-16">
-          <Badge variant="outline" className="mb-4">Platform Features</Badge>
+          <Badge variant="outline" className="mb-4">Our Services</Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
-            Everything you need to manage web scraping at scale
+            Five Core Services. One Technology Partner.
           </h2>
           <p className="text-lg text-muted-foreground">
-            From actor orchestration to data collection and cost analytics — Annalytick gives your team complete visibility and control over every scraping workflow.
+            From AI/ML and data solutions to costware, web development, and mobile apps — we deliver the full technology stack your business needs to compete and scale.
           </p>
         </div>
 
@@ -93,10 +93,10 @@ export function FeaturesSection() {
           <div className="space-y-6">
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold tracking-tight text-balance sm:text-3xl">
-                Manage scraping as projects, not loose actors
+                AI, Data & Costware — The Intelligence Layer of Your Business
               </h3>
               <p className="text-muted-foreground text-base text-pretty">
-                Connect actors to projects with defined timelines. Schedule runs or trigger them manually. Sync public Apify actors alongside your own — all from one dashboard.
+                We build AI-powered systems, data engineering pipelines, and custom enterprise software (Costware) that eliminate inefficiencies and put intelligent automation at the core of your operations.
               </p>
             </div>
 
@@ -116,14 +116,14 @@ export function FeaturesSection() {
 
             <div className="flex flex-col sm:flex-row gap-4 pe-4 pt-2">
               <Button size="lg" className="cursor-pointer" asChild>
-                <Link href="/auth/sign-up" className='flex items-center'>
-                  Start Free Trial
+                <Link href="#contact" className='flex items-center'>
+                  Get Started
                   <ArrowRight className="ms-2 size-4" aria-hidden="true" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" className="cursor-pointer" asChild>
-                <a href="#pricing">
-                  View Plans
+                <a href="#about">
+                  Learn More
                 </a>
               </Button>
             </div>
@@ -136,10 +136,10 @@ export function FeaturesSection() {
           <div className="space-y-6 order-2 lg:order-1">
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold tracking-tight text-balance sm:text-3xl">
-                One dataset from every run — not scattered files
+                Web, Mobile & Analytics — Your Digital Presence, Perfected
               </h3>
               <p className="text-muted-foreground text-base text-pretty">
-                Unlike other platforms, Annalytick combines data from multiple runs of the same actor into a single, queryable dataset. Access it via API or export to Excel, CSV, and JSON.
+                From stunning web platforms and mobile apps to business intelligence dashboards and IT strategy, we cover every touchpoint of your digital presence and help you extract maximum value from your technology investments.
               </p>
             </div>
 
@@ -159,14 +159,14 @@ export function FeaturesSection() {
 
             <div className="flex flex-col sm:flex-row gap-4 pe-4 pt-2">
               <Button size="lg" className="cursor-pointer" asChild>
-                <a href="#about" className='flex items-center'>
-                  Learn More
+                <a href="#contact" className='flex items-center'>
+                  Contact Us
                   <ArrowRight className="ms-2 size-4" aria-hidden="true" />
                 </a>
               </Button>
               <Button size="lg" variant="outline" className="cursor-pointer" asChild>
-                <a href="#contact">
-                  Talk to Sales
+                <a href="#about">
+                  Our Approach
                 </a>
               </Button>
             </div>

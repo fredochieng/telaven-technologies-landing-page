@@ -1,5 +1,44 @@
 import nodemailer from "nodemailer";
 
+// ─── Contact Form Email (SendGrid / ZeptoMail) ──────────────────────────────
+
+interface ContactEmailOptions {
+  to: string;
+  subject: string;
+  html: string;
+  replyTo?: string;
+}
+
+export async function sendContactEmail(opts: ContactEmailOptions): Promise<void> {
+  const provider = process.env.EMAIL_PROVIDER ?? "sendgrid";
+
+  if (provider === "zeptomail") {
+    const { SendMailClient } = await import("zeptomail");
+    const client = new SendMailClient({
+      url: "api.zeptomail.com/",
+      token: process.env.ZEPTOMAIL_API_KEY!,
+    });
+    await client.sendMail({
+      from: { address: process.env.ZEPTOMAIL_FROM_EMAIL!, name: "Telaven Technologies" },
+      to: [{ email_address: { address: opts.to, name: "" } }],
+      subject: opts.subject,
+      htmlbody: opts.html,
+      ...(opts.replyTo ? { reply_to: [{ address: opts.replyTo, name: "" }] } : {}),
+    });
+  } else {
+    // default: sendgrid
+    const sgMail = (await import("@sendgrid/mail")).default;
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
+    await sgMail.send({
+      to: opts.to,
+      from: { email: process.env.SENDGRID_FROM_EMAIL!, name: "Telaven Technologies" },
+      subject: opts.subject,
+      html: opts.html,
+      ...(opts.replyTo ? { replyTo: opts.replyTo } : {}),
+    });
+  }
+}
+
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST || "smtp.mailgun.org",
   port: parseInt(process.env.SMTP_PORT || "587"),

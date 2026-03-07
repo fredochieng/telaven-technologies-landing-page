@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Menu, LayoutDashboard, X, Moon, Sun } from 'lucide-react'
+import { Menu, X, Moon, Sun } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   NavigationMenu,
@@ -20,18 +20,15 @@ import {
 import { Logo } from '@/components/logo'
 import { ModeToggle } from '@/components/mode-toggle'
 import { useTheme } from '@/hooks/use-theme'
-import { useSession } from '@/lib/auth-client'
 
 const navigationItems = [
   { name: 'Home', href: '#hero' },
-  { name: 'Features', href: '#features' },
+  { name: 'Services', href: '#features' },
   { name: 'About', href: '#about' },
-  { name: 'Pricing', href: '#pricing' },
-  { name: 'FAQ', href: '#faq' },
+  { name: 'Team', href: '#team' },
   { name: 'Contact', href: '#contact' },
 ]
 
-// Smooth scroll function
 const smoothScrollTo = (targetId: string) => {
   if (targetId.startsWith('#')) {
     const element = document.querySelector(targetId)
@@ -47,26 +44,17 @@ const smoothScrollTo = (targetId: string) => {
 export function LandingNavbar() {
   const [isOpen, setIsOpen] = useState(false)
   const { setTheme, theme } = useTheme()
-  const { data: session } = useSession()
-  const isLoggedIn = !!session?.user
-
-  const appUrl = process.env.NEXT_PUBLIC_APP_SUBDOMAIN_URL || 'http://app.localhost:3000'
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
-        {/* Logo */}
         <div className="flex items-center space-x-2">
-          <Link href="/" className="flex items-center space-x-2 cursor-pointer">
-            <Logo size={32} />
-            <span className="font-bold">
-              Annalytick
-            </span>
+          <Link href="/" className="flex items-center cursor-pointer">
+            <Logo size={140} />
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
-        <NavigationMenu className="hidden xl:flex">
+        <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
             {navigationItems.map((item) => (
               <NavigationMenuItem key={item.name}>
@@ -88,31 +76,15 @@ export function LandingNavbar() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* Desktop CTA */}
-        <div className="hidden xl:flex items-center space-x-2">
+        <div className="hidden md:flex items-center space-x-2">
           <ModeToggle variant="ghost" />
-          {isLoggedIn ? (
-            <Button variant="outline" asChild className="cursor-pointer">
-              <a href={`${appUrl}/dashboard`}>
-                <LayoutDashboard className="h-4 w-4 mr-2" />
-                My Account
-              </a>
-            </Button>
-          ) : (
-            <>
-              <Button variant="ghost" asChild className="cursor-pointer">
-                <a href={`${appUrl}/sign-in`}>Sign In</a>
-              </Button>
-              <Button asChild className="cursor-pointer">
-                <a href={`${appUrl}/sign-up`}>Get Started</a>
-              </Button>
-            </>
-          )}
+          <Button asChild className="cursor-pointer">
+            <Link href="#contact">Get Started</Link>
+          </Button>
         </div>
 
-        {/* Mobile Menu */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="xl:hidden">
+          <SheetTrigger asChild className="md:hidden">
             <Button variant="ghost" size="icon" className="cursor-pointer">
               <Menu className="h-5 w-5" />
               <span className="sr-only">Toggle menu</span>
@@ -120,13 +92,9 @@ export function LandingNavbar() {
           </SheetTrigger>
           <SheetContent side="right" className="w-full sm:w-[400px] p-0 gap-0 [&>button]:hidden overflow-hidden flex flex-col">
             <div className="flex flex-col h-full">
-              {/* Header */}
               <SheetHeader className="space-y-0 p-4 pb-2 border-b">
                 <div className="flex items-center gap-2">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <Logo size={16} />
-                  </div>
-                  <SheetTitle className="text-lg font-semibold">Annalytick</SheetTitle>
+                  <Logo size={120} />
                   <div className="ml-auto flex items-center gap-2">
                     <Button
                       variant="ghost"
@@ -144,7 +112,6 @@ export function LandingNavbar() {
                 </div>
               </SheetHeader>
 
-              {/* Navigation Links */}
               <div className="flex-1 overflow-y-auto">
                 <nav className="p-6 space-y-1">
                   {navigationItems.map((item) => (
@@ -166,27 +133,10 @@ export function LandingNavbar() {
                 </nav>
               </div>
 
-              {/* Footer Actions */}
-              <div className="border-t p-6 space-y-4">
-                <div className="space-y-3">
-                  {isLoggedIn ? (
-                    <Button variant="outline" size="lg" asChild className="w-full cursor-pointer">
-                      <a href={`${appUrl}/dashboard`}>
-                        <LayoutDashboard className="size-4" />
-                        My Account
-                      </a>
-                    </Button>
-                  ) : (
-                    <div className="grid grid-cols-2 gap-3">
-                      <Button variant="outline" size="lg" asChild className="cursor-pointer">
-                        <a href={`${appUrl}/sign-in`}>Sign In</a>
-                      </Button>
-                      <Button asChild size="lg" className="cursor-pointer">
-                        <a href={`${appUrl}/sign-up`}>Get Started</a>
-                      </Button>
-                    </div>
-                  )}
-                </div>
+              <div className="border-t p-6">
+                <Button asChild size="lg" className="w-full cursor-pointer">
+                  <Link href="#contact">Get Started</Link>
+                </Button>
               </div>
             </div>
           </SheetContent>

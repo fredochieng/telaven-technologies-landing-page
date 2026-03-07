@@ -12,83 +12,83 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    name: 'Grace Muthoni',
-    role: 'Data Engineering Lead',
+    name: 'Sarah Kimani',
+    role: 'CEO, EduTech Solutions',
     image: 'https://notion-avatars.netlify.app/api/avatar?preset=female-1',
     quote:
-      'Annalytick replaced our messy spreadsheets and Slack threads. Now we have a single dashboard for every actor, every run, and every data point. Our team saves hours every week.',
+      'Telaven Technologies built our school management system from scratch. The platform has streamlined our operations and improved parent-teacher communication significantly.',
   },
   {
-    name: 'James Oduor',
-    role: 'Head of Growth',
+    name: 'David Mwangi',
+    role: 'Operations Director',
     image: 'https://notion-avatars.netlify.app/api/avatar?preset=male-1',
-    quote: 'The cost tracking alone paid for the subscription. We finally know exactly how much each scraping project costs us.',
+    quote: 'Their data analytics solution gave us insights we never had before. We can now make informed decisions based on real-time data.',
   },
   {
-    name: 'Priya Sharma',
-    role: 'Product Analyst',
+    name: 'Amina Hassan',
+    role: 'Founder, RetailHub',
     image: 'https://notion-avatars.netlify.app/api/avatar?preset=female-2',
     quote:
-      'The unified datastore is a game-changer. I can search across millions of scraped records, toggle columns, and export exactly what I need — no engineering help required.',
+      'The mobile app they developed for our retail business has increased customer engagement by 60%. Professional team, quality work.',
   },
   {
-    name: 'Robert Njeru',
-    role: 'CTO, DataHarvest',
+    name: 'Peter Ochieng',
+    role: 'CTO, FinServe Ltd',
     image: 'https://notion-avatars.netlify.app/api/avatar?preset=male-2',
     quote:
-      'We manage 40+ Apify actors across 12 projects. Before Annalytick, it was chaos. Now everything is organized, tracked, and visible to the whole team.',
+      'Telaven delivered our custom software on time and within budget. Their technical expertise and understanding of our business needs was impressive.',
   },
   {
-    name: 'Maria Santos',
-    role: 'Freelance Data Consultant',
+    name: 'Grace Wanjiru',
+    role: 'Managing Director',
     image: 'https://notion-avatars.netlify.app/api/avatar?preset=female-3',
     quote:
-      'I use Annalytick for all my client projects. The project-based organization and run history make it easy to show clients exactly what they are getting.',
+      'Their IT consultancy helped us modernize our infrastructure. The team is knowledgeable, responsive, and truly invested in our success.',
   },
   {
-    name: 'Thomas Wekesa',
-    role: 'Solutions Architect',
+    name: 'James Otieno',
+    role: 'Head of Digital',
     image: 'https://notion-avatars.netlify.app/api/avatar?preset=male-3',
-    quote: 'Setting up was incredibly fast. We connected our Apify account and had full visibility into our actors within minutes.',
+    quote: 'The website they built for us is fast, modern, and exactly what we needed. Our online conversions have doubled since launch.',
   },
   {
-    name: 'Lisa Achieng',
-    role: 'Operations Manager',
+    name: 'Linda Njeri',
+    role: 'Business Owner',
     image: 'https://notion-avatars.netlify.app/api/avatar?preset=female-4',
     quote:
-      'The team collaboration features are exactly what we needed. I can invite analysts, assign them to projects, and everyone sees the same data. No more silos.',
+      'Working with Telaven was seamless. They understood our vision and delivered a solution that exceeded our expectations.',
   },
   {
-    name: 'Michael Kamau',
-    role: 'Backend Engineer',
+    name: 'Michael Kariuki',
+    role: 'Product Manager',
     image: 'https://notion-avatars.netlify.app/api/avatar?preset=male-4',
-    quote: 'The one-click sync for both own and public Apify actors is brilliant. Managing actor configurations has never been easier.',
+    quote: 'Their machine learning solution automated our inventory forecasting. We have reduced waste by 40% and improved stock availability.',
   },
   {
-    name: 'Sophie Wanjiku',
-    role: 'Business Intelligence Lead',
+    name: 'Faith Akinyi',
+    role: 'VP of Operations',
     image: 'https://notion-avatars.netlify.app/api/avatar?preset=female-5',
     quote:
-      'Annalytick gives us the analytics layer we were missing. Run success rates, cost breakdowns, data volume trends — it is all there in beautiful charts.',
+      'Telaven Technologies transformed our manual processes into an efficient digital workflow. The ROI has been remarkable.',
   },
   {
-    name: 'Daniel Otieno',
+    name: 'Robert Kamau',
     role: 'Startup Founder',
     image: 'https://notion-avatars.netlify.app/api/avatar?preset=male-5',
-    quote: 'As a non-technical founder, Annalytick made web scraping manageable. I can see what is running, what it costs, and what data we are collecting.',
+    quote: 'As a startup, we needed a reliable technology partner. Telaven delivered quality work at a fair price and continues to support us.',
   },
   {
-    name: 'Natasha Omondi',
-    role: 'Research Lead',
+    name: 'Christine Mutua',
+    role: 'HR Director',
     image: 'https://notion-avatars.netlify.app/api/avatar?preset=female-6',
     quote:
-      'We run competitive intelligence scraping across dozens of websites. Annalytick keeps everything organized by project and gives us instant access to historical data.',
+      'The custom HR management system they built has simplified our recruitment and employee management processes completely.',
   },
   {
-    name: 'Carlos Rivera',
-    role: 'Agency Director',
+    name: 'Daniel Omondi',
+    role: 'CFO, AgriTech Co',
     image: 'https://notion-avatars.netlify.app/api/avatar?preset=male-6',
-    quote: 'We manage scraping for 8 different clients. Annalytick project separation keeps everything clean and accountable.',
+    quote: 'Their business intelligence dashboard gives us real-time financial insights. Decision-making has never been easier.',
   },
 ]
 
@@ -134,10 +134,10 @@ export function TestimonialsSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-14">
           <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-4">
-            Testimonial
+            Testimonials
           </p>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Loved by data teams everywhere
+            Trusted by Businesses Across Industries
           </h2>
         </div>
       </div>

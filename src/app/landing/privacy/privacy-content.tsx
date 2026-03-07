@@ -12,7 +12,7 @@ export function PrivacyPageContent() {
       <section>
         <h2 className="text-xl font-semibold mb-3">1. Introduction</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Annalytick (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our web scraping project management platform, including our website, dashboard, and API services (collectively, the &quot;Service&quot;).
+          Telaven Technologies (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our enterprise technology platform, including our website, dashboard, and API services (collectively, the &quot;Service&quot;).
         </p>
       </section>
 
@@ -28,7 +28,7 @@ export function PrivacyPageContent() {
         </p>
         <h3 className="text-lg font-medium mb-2">2.3 Scraped Data</h3>
         <p className="text-muted-foreground leading-relaxed mb-3">
-          Data collected by your Apify actors is stored in our databases as part of the Service. We do not access, analyze, or share your scraped data except as necessary to provide the Service or as required by law.
+          Data collected by your our platform actors is stored in our databases as part of the Service. We do not access, analyze, or share your processed data except as necessary to provide the Service or as required by law.
         </p>
         <h3 className="text-lg font-medium mb-2">2.4 Payment Information</h3>
         <p className="text-muted-foreground leading-relaxed">
@@ -89,7 +89,7 @@ export function PrivacyPageContent() {
           <li><strong>Objection:</strong> Object to processing of your personal data</li>
         </ul>
         <p className="text-muted-foreground leading-relaxed mt-3">
-          To exercise any of these rights, please contact us at <a href="mailto:privacy@annalytick.com" className="text-primary hover:underline">privacy@annalytick.com</a>.
+          To exercise any of these rights, please contact us at <a href="mailto:privacy@telaventechnologies.com" className="text-primary hover:underline">privacy@telaventechnologies.com</a>.
         </p>
       </section>
 
@@ -110,7 +110,7 @@ export function PrivacyPageContent() {
       <section>
         <h2 className="text-xl font-semibold mb-3">10. Contact Us</h2>
         <p className="text-muted-foreground leading-relaxed">
-          If you have questions about this Privacy Policy, please contact us at <a href="mailto:privacy@annalytick.com" className="text-primary hover:underline">privacy@annalytick.com</a> or through our <a href="/landing#contact" className="text-primary hover:underline">contact form</a>.
+          If you have questions about this Privacy Policy, please contact us at <a href="mailto:privacy@telaventechnologies.com" className="text-primary hover:underline">privacy@telaventechnologies.com</a> or through our <a href="/landing#contact" className="text-primary hover:underline">contact form</a>.
         </p>
       </section>
     </LegalPageLayout>

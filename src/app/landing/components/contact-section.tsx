@@ -1,7 +1,7 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
+import { useForm, Controller } from "react-hook-form"
 import { z } from "zod"
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -16,20 +16,35 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import { Mail, MessageCircle, BookOpen, Loader2 } from 'lucide-react'
 import { useState } from 'react'
 import { useToast } from '@/hooks/use-toast'
+import PhoneInput, { getCountries, getCountryCallingCode } from 'react-phone-number-input'
+import type { Country } from 'react-phone-number-input'
+import 'react-phone-number-input/style.css'
+
+const countryList = getCountries().map((code) => ({
+  code,
+  label: new Intl.DisplayNames(['en'], { type: 'region' }).of(code) ?? code,
+  callingCode: getCountryCallingCode(code as Country),
+})).sort((a, b) => a.label.localeCompare(b.label))
 
 const contactFormSchema = z.object({
-  firstName: z.string().min(2, {
-    message: "First name must be at least 2 characters.",
-  }),
-  lastName: z.string().min(2, {
-    message: "Last name must be at least 2 characters.",
+  name: z.string().min(2, {
+    message: "Name must be at least 2 characters.",
   }),
   email: z.string().email({
     message: "Please enter a valid email address.",
   }),
+  country: z.string().min(1, { message: "Please select your country." }),
+  phone: z.string().min(5, { message: "Please enter a valid phone number." }),
   subject: z.string().min(5, {
     message: "Subject must be at least 5 characters.",
   }),
@@ -45,13 +60,16 @@ export function ContactSection() {
   const form = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
+      name: "",
       email: "",
+      country: "",
+      phone: "",
       subject: "",
       message: "",
     },
   })
+
+  const selectedCountry = form.watch("country") as Country | undefined
 
   async function onSubmit(values: z.infer<typeof contactFormSchema>) {
     setIsSubmitting(true)
@@ -77,7 +95,7 @@ export function ContactSection() {
           variant: 'destructive',
         })
       }
-    } catch (error) {
+    } catch {
       toast({
         title: 'Error',
         description: 'Could not send your message. Please try again later.',
@@ -94,10 +112,10 @@ export function ContactSection() {
         <div className="mx-auto max-w-2xl text-center mb-16">
           <Badge variant="outline" className="mb-4">Get In Touch</Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
-            Need help or have questions?
+            Let's Discuss Your Project
           </h2>
           <p className="text-lg text-muted-foreground">
-            Our team is here to help you get the most out of Annalytick. Whether you need onboarding help, have a feature request, or want to discuss enterprise plans — reach out anytime.
+            Ready to transform your business with technology? Our team is here to discuss your requirements, answer questions, and provide expert guidance on your digital transformation journey.
           </p>
         </div>
 
@@ -113,11 +131,11 @@ export function ContactSection() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-3">
-                  Reach our support team directly for account issues, billing questions, or technical help.
+                  Get in touch with our team for project inquiries, consultations, or general questions.
                 </p>
                 <Button variant="outline" size="sm" className="cursor-pointer" asChild>
-                  <a href="mailto:support@annalytick.com">
-                    support@annalytick.com
+                  <a href="mailto:info@telaventechnologies.com">
+                    info@telaventechnologies.com
                   </a>
                 </Button>
               </CardContent>
@@ -127,16 +145,16 @@ export function ContactSection() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <MessageCircle className="h-5 w-5 text-primary" />
-                  Live Chat
+                  Schedule a Call
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-3">
-                  Chat with our team in real time during business hours for quick answers and onboarding help.
+                  Book a free consultation to discuss your project requirements and explore how we can help.
                 </p>
                 <Button variant="outline" size="sm" className="cursor-pointer" asChild>
-                  <a href="#">
-                    Start Chat
+                  <a href="#contact">
+                    Book Consultation
                   </a>
                 </Button>
               </CardContent>
@@ -146,16 +164,16 @@ export function ContactSection() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <BookOpen className="h-5 w-5 text-primary" />
-                  Knowledge Base
+                  Our Services
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-3">
-                  Browse guides on setting up Apify integration, managing projects, and exporting data.
+                  Explore our full range of technology solutions and see how we can help your business.
                 </p>
                 <Button variant="outline" size="sm" className="cursor-pointer" asChild>
-                  <a href="#">
-                    View Guides
+                  <a href="#features">
+                    View Services
                   </a>
                 </Button>
               </CardContent>
@@ -174,15 +192,16 @@ export function ContactSection() {
               <CardContent>
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    {/* Row 1: Full name / Email */}
                     <div className="grid gap-4 sm:grid-cols-2">
                       <FormField
                         control={form.control}
-                        name="firstName"
+                        name="name"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>First name</FormLabel>
+                            <FormLabel>Full name</FormLabel>
                             <FormControl>
-                              <Input placeholder="John" {...field} />
+                              <Input placeholder="John Doe" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -190,31 +209,76 @@ export function ContactSection() {
                       />
                       <FormField
                         control={form.control}
-                        name="lastName"
+                        name="email"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Last name</FormLabel>
+                            <FormLabel>Email</FormLabel>
                             <FormControl>
-                              <Input placeholder="Doe" {...field} />
+                              <Input type="email" placeholder="john@example.com" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
                         )}
                       />
                     </div>
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Email</FormLabel>
-                          <FormControl>
-                            <Input type="email" placeholder="john@example.com" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
+
+                    {/* Row 3: Country / Phone */}
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <FormField
+                        control={form.control}
+                        name="country"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Country</FormLabel>
+                            <Select
+                              onValueChange={field.onChange}
+                              value={field.value}
+                            >
+                              <FormControl>
+                                <SelectTrigger className="w-full">
+                                  <SelectValue placeholder="Select country" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent className="max-h-64">
+                                {countryList.map(({ code, label, callingCode }) => (
+                                  <SelectItem key={code} value={code}>
+                                    {label} (+{callingCode})
+                                  </SelectItem>
+                                ))}
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormItem>
+                        <FormLabel>Phone</FormLabel>
+                        <Controller
+                          control={form.control}
+                          name="phone"
+                          render={({ field, fieldState }) => (
+                            <>
+                              <PhoneInput
+                                international
+                                defaultCountry={selectedCountry || "US"}
+                                country={selectedCountry || undefined}
+                                value={field.value}
+                                onChange={field.onChange}
+                                className="phone-input-wrapper"
+                              />
+                              {fieldState.error && (
+                                <p className="text-sm font-medium text-destructive">
+                                  {fieldState.error.message}
+                                </p>
+                              )}
+                            </>
+                          )}
+                        />
+                      </FormItem>
+                    </div>
+
+                    {/* Row 4: Subject */}
                     <FormField
                       control={form.control}
                       name="subject"
@@ -222,12 +286,14 @@ export function ContactSection() {
                         <FormItem>
                           <FormLabel>Subject</FormLabel>
                           <FormControl>
-                            <Input placeholder="Feature request, integration help, enterprise inquiry..." {...field} />
+                            <Input placeholder="Project inquiry, consultation request, partnership..." {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
+
+                    {/* Row 5: Message */}
                     <FormField
                       control={form.control}
                       name="message"
@@ -236,7 +302,7 @@ export function ContactSection() {
                           <FormLabel>Message</FormLabel>
                           <FormControl>
                             <Textarea
-                              placeholder="Tell us how we can help you with Annalytick..."
+                              placeholder="Tell us about your project requirements and how we can help..."
                               rows={10}
                               className="min-h-50"
                               {...field}
@@ -246,6 +312,7 @@ export function ContactSection() {
                         </FormItem>
                       )}
                     />
+
                     <Button type="submit" className="w-full cursor-pointer" disabled={isSubmitting}>
                       {isSubmitting ? (
                         <>

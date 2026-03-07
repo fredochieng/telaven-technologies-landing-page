@@ -65,7 +65,7 @@ export function LogoCarousel() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <p className="text-sm font-medium text-muted-foreground mb-8">
-            Trusted by data teams at companies like
+            Technologies and platforms we build with
           </p>
 
           {/* Logo Carousel with Fade Effect */}

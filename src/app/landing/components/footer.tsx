@@ -24,23 +24,23 @@ const newsletterSchema = z.object({
 })
 
 const footerLinks = {
-  product: [
-    { name: 'Features', href: '#features' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Integrations', href: '#features' },
-    { name: 'Changelog', href: '#blog' },
+  services: [
+    { name: 'Costware', href: '#features' },
+    { name: 'AI & Machine Learning', href: '#features' },
+    { name: 'Data Solutions', href: '#features' },
+    { name: 'Mobile Apps', href: '#features' },
   ],
   company: [
     { name: 'About', href: '#about' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'Team', href: '#team' },
+    { name: 'Services', href: '#features' },
     { name: 'Contact', href: '#contact' },
+    { name: 'Blog', href: '#blog' },
   ],
-  resources: [
-    { name: 'Help Center', href: '#faq' },
-    { name: 'Knowledge Base', href: '#faq' },
-    { name: 'API Docs', href: '/landing/api-docs' },
-    { name: 'Status', href: '#' },
+  solutions: [
+    { name: 'Web Design & Dev', href: '#features' },
+    { name: 'Data Analytics & BI', href: '#features' },
+    { name: 'IT Consultancy', href: '#features' },
+    { name: 'Enterprise Security', href: '#features' },
   ],
   legal: [
     { name: 'Privacy', href: '/landing/privacy' },
@@ -77,9 +77,9 @@ export function LandingFooter() {
         {/* Newsletter Section */}
         <div className="mb-16">
           <div className="mx-auto max-w-2xl text-center">
-            <h3 className="text-2xl font-bold mb-4">Stay updated</h3>
+            <h3 className="text-2xl font-bold mb-4">Stay Connected</h3>
             <p className="text-muted-foreground mb-6">
-              Get product updates, scraping tips, and platform news delivered to your inbox.
+              Get technology insights, industry trends, and company updates delivered to your inbox.
             </p>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-2 max-w-md mx-auto sm:flex-row">
@@ -110,13 +110,12 @@ export function LandingFooter() {
           {/* Brand Column */}
           <div className="col-span-4 lg:col-span-2 max-w-2xl">
             <div className="flex items-center space-x-2 mb-4 max-lg:justify-center">
-              <a href="/" className="flex items-center space-x-2 cursor-pointer">
-                <Logo size={32} />
-                <span className="font-bold text-xl">Annalytick</span>
+              <a href="/" className="flex items-center cursor-pointer">
+                <Logo size={140} />
               </a>
             </div>
             <p className="text-muted-foreground mb-6 max-lg:text-center max-lg:flex max-lg:justify-center">
-              The all-in-one platform for managing web scraping projects, tracking Apify actor runs, monitoring costs, and collecting structured data at scale.
+              Costware, AI/ML, Data Solutions, Web Development, and Mobile Apps — enterprise technology that transforms your business.
             </p>
             <div className="flex space-x-4 max-lg:justify-center">
               {socialLinks.map((social) => (
@@ -168,16 +167,7 @@ export function LandingFooter() {
         {/* Bottom Footer */}
         <div className="flex flex-col lg:flex-row justify-between items-center gap-2">
           <div className="flex flex-col sm:flex-row items-center gap-2 text-muted-foreground text-sm">
-            <div className="flex items-center gap-1">
-              <span>Made with</span>
-              <Heart className="h-4 w-4 text-red-500 fill-current" />
-              <span>by</span>
-              <a href="https://annalytick.com" target='_blank' className="font-semibold text-foreground hover:text-primary transition-colors cursor-pointer">
-                Annalytick
-              </a>
-            </div>
-            <span className="hidden sm:inline">•</span>
-            <span>© {new Date().getFullYear()} Annalytick. All rights reserved.</span>
+            <span>© {new Date().getFullYear()} Telaven Technologies. All rights reserved.</span>
           </div>
           <div className="flex items-center space-x-4 text-sm text-muted-foreground mt-4 md:mt-0">
             <Link href="/landing/privacy" className="hover:text-foreground transition-colors">

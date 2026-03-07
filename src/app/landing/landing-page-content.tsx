@@ -9,14 +9,11 @@ import { FeaturesSection } from './components/features-section'
 import { TeamSection } from './components/team-section'
 import { TestimonialsSection } from './components/testimonials-section'
 import { BlogSection } from './components/blog-section'
-import { PricingSection } from './components/pricing-section'
 import { CTASection } from './components/cta-section'
 import { ContactSection } from './components/contact-section'
-import { FaqSection } from './components/faq-section'
 import { LandingFooter } from './components/footer'
 import { LandingThemeCustomizer, LandingThemeCustomizerTrigger } from './components/landing-theme-customizer'
 import { AboutSection } from './components/about-section'
-import { ApiAccessSection } from './components/api-access-section'
 
 export function LandingPageContent() {
   const [themeCustomizerOpen, setThemeCustomizerOpen] = React.useState(false)
@@ -33,12 +30,9 @@ export function LandingPageContent() {
         <StatsSection />
         <AboutSection />
         <FeaturesSection />
-        <ApiAccessSection />
         <TeamSection />
-        <PricingSection />
         <TestimonialsSection />
         <BlogSection />
-        <FaqSection />
         <CTASection />
         <ContactSection />
       </main>

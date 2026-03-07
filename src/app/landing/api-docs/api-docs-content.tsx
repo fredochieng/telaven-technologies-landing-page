@@ -129,7 +129,7 @@ export function ApiDocsPageContent() {
             <Badge variant="outline" className="mb-4">Developer</Badge>
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl mb-3">API Documentation</h1>
             <p className="text-muted-foreground text-lg">
-              Access your Annalytick project data programmatically using our REST API.
+              Access your Telaven Technologies project data programmatically using our REST API.
             </p>
           </div>
 
@@ -140,7 +140,7 @@ export function ApiDocsPageContent() {
               All API requests require authentication using an API key. You can generate API keys from your dashboard under <strong>Settings → Connections</strong>. Include your API key in the <code className="bg-muted px-1.5 py-0.5 rounded text-sm">Authorization</code> header.
             </p>
             <CodeBlock code={`curl -H "Authorization: Bearer annalytick_your_api_key_here" \\
-  https://annalytick.com/api/public/v1/projects/:uuid/datastore`} />
+  https://telaventechnologies.com/api/public/v1/projects/:uuid/datastore`} />
 
             <div className="mt-4 p-4 bg-amber-500/10 border border-amber-500/20 rounded-lg">
               <p className="text-sm text-amber-700 dark:text-amber-400">
@@ -152,7 +152,7 @@ export function ApiDocsPageContent() {
           {/* Base URL */}
           <section className="mb-12">
             <h2 className="text-2xl font-semibold mb-4">Base URL</h2>
-            <CodeBlock code="https://annalytick.com/api/public/v1" />
+            <CodeBlock code="https://telaventechnologies.com/api/public/v1" />
           </section>
 
           {/* Error Responses */}
@@ -212,12 +212,12 @@ export function ApiDocsPageContent() {
                 { name: "uuid", type: "string", description: "Project UUID (from your project URL)", required: true },
                 { name: "limit", type: "integer", description: "Max items to return (default: 1000, max: 10000)" },
                 { name: "offset", type: "integer", description: "Pagination offset (default: 0)" },
-                { name: "actorId", type: "string", description: "Filter by specific Apify actor ID" },
+                { name: "actorId", type: "string", description: "Filter by specific our platform actor ID" },
                 { name: "startDate", type: "string", description: "Filter runs started after this date (ISO 8601)" },
                 { name: "endDate", type: "string", description: "Filter runs started before this date (ISO 8601)" },
               ]}
               curl={`curl -H "Authorization: Bearer annalytick_abc123..." \\
-  "https://annalytick.com/api/public/v1/projects/129e348e-.../datastore?limit=100"`}
+  "https://telaventechnologies.com/api/public/v1/projects/129e348e-.../datastore?limit=100"`}
               response={`{
   "success": true,
   "data": [
@@ -245,14 +245,14 @@ export function ApiDocsPageContent() {
               description="Retrieve all output data from all succeeded runs for a specific actor in a project."
               params={[
                 { name: "uuid", type: "string", description: "Project UUID", required: true },
-                { name: "actorId", type: "string", description: "Apify actor ID", required: true },
+                { name: "actorId", type: "string", description: "our platform actor ID", required: true },
                 { name: "limit", type: "integer", description: "Max items to return (default: 1000, max: 10000)" },
                 { name: "offset", type: "integer", description: "Pagination offset (default: 0)" },
                 { name: "startDate", type: "string", description: "Filter runs started after this date (ISO 8601)" },
                 { name: "endDate", type: "string", description: "Filter runs started before this date (ISO 8601)" },
               ]}
               curl={`curl -H "Authorization: Bearer annalytick_abc123..." \\
-  "https://annalytick.com/api/public/v1/projects/129e348e-.../actors/6yYhdxJIPJwQkJwfG/datastore?limit=50"`}
+  "https://telaventechnologies.com/api/public/v1/projects/129e348e-.../actors/6yYhdxJIPJwQkJwfG/datastore?limit=50"`}
               response={`{
   "success": true,
   "data": [
@@ -279,13 +279,13 @@ export function ApiDocsPageContent() {
               description="Retrieve the output dataset for a specific actor run. Supports JSON and CSV formats."
               params={[
                 { name: "uuid", type: "string", description: "Project UUID", required: true },
-                { name: "runId", type: "string", description: "Apify run ID", required: true },
+                { name: "runId", type: "string", description: "our platform run ID", required: true },
                 { name: "limit", type: "integer", description: "Max items to return (default: 1000, max: 10000)" },
                 { name: "offset", type: "integer", description: "Pagination offset (default: 0)" },
                 { name: "format", type: "string", description: "Response format: json or csv (default: json)" },
               ]}
               curl={`curl -H "Authorization: Bearer annalytick_abc123..." \\
-  "https://annalytick.com/api/public/v1/projects/129e348e-.../runs/6ni0UeLL52g2M4hWc/dataset?format=json&limit=100"`}
+  "https://telaventechnologies.com/api/public/v1/projects/129e348e-.../runs/6ni0UeLL52g2M4hWc/dataset?format=json&limit=100"`}
               response={`{
   "success": true,
   "data": [
@@ -324,7 +324,7 @@ export function ApiDocsPageContent() {
           <section className="mt-12">
             <h2 className="text-2xl font-semibold mb-4">Need Help?</h2>
             <p className="text-muted-foreground leading-relaxed">
-              If you have questions about the API or need assistance with integration, reach out through our <a href="/landing#contact" className="text-primary hover:underline">contact form</a> or email <a href="mailto:support@annalytick.com" className="text-primary hover:underline">support@annalytick.com</a>.
+              If you have questions about the API or need assistance with integration, reach out through our <a href="/landing#contact" className="text-primary hover:underline">contact form</a> or email <a href="mailto:support@telaventechnologies.com" className="text-primary hover:underline">support@telaventechnologies.com</a>.
             </p>
           </section>
         </div>

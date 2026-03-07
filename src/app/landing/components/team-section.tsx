@@ -13,7 +13,7 @@ const team = [
     id: 1,
     name: 'Fredrick Owuor',
     role: 'Founder & CEO',
-    description: 'Data engineer and serial builder. Passionate about making web scraping accessible to every team.',
+    description: 'Technologist and entrepreneur driving Telaven Technologies\' mission to deliver intelligent, enterprise-grade software across Africa and beyond.',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=60&w=150&auto=format&fit=crop',
     fallback: 'FO',
     social: {
@@ -26,7 +26,7 @@ const team = [
     id: 2,
     name: 'Sarah Kimani',
     role: 'Head of Engineering',
-    description: 'Full-stack engineer with 8+ years building scalable data platforms and APIs.',
+    description: 'Full-stack engineer with 8+ years building scalable platforms — from custom Costware systems to cloud-native data pipelines.',
     image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?q=60&w=150&auto=format&fit=crop',
     fallback: 'SK',
     social: {
@@ -38,8 +38,8 @@ const team = [
   {
     id: 3,
     name: 'Daniel Ochieng',
-    role: 'Product Manager',
-    description: 'Former PM at data startups. Obsessed with developer experience and workflow automation.',
+    role: 'AI & Data Lead',
+    description: 'Machine learning engineer specializing in predictive analytics, NLP, and data engineering solutions that turn raw data into competitive advantage.',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=60&w=150&auto=format&fit=crop',
     fallback: 'DO',
     social: {
@@ -52,7 +52,7 @@ const team = [
     id: 4,
     name: 'Amina Hassan',
     role: 'Lead Designer',
-    description: 'UX/UI designer specializing in data-heavy dashboards and analytics interfaces.',
+    description: 'UX/UI designer crafting intuitive digital experiences — from mobile apps and web platforms to complex enterprise dashboards.',
     image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=60&w=150&auto=format&fit=crop',
     fallback: 'AH',
     social: {
@@ -73,10 +73,10 @@ export function TeamSection() {
             Our Team
           </Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
-            Meet the Annalytick team
+            Meet the Telaven Technologies Team
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            A small, focused team of engineers and designers building the future of web scraping management. We live and breathe data.
+            A focused team of engineers, designers, and AI specialists building enterprise technology solutions that make a measurable difference.
           </p>
         </div>
 

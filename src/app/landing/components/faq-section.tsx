@@ -14,39 +14,39 @@ type FaqItem = {
 const faqItems: FaqItem[] = [
   {
     value: 'item-1',
-    question: 'How does Annalytick connect to my Apify account?',
+    question: 'What is Costware and how is it different from off-the-shelf software?',
     answer:
-      'Simply add your Apify API token in the settings page. Annalytick uses the token to sync your actors, fetch run data, and pull output datasets. Your token is encrypted at rest and never shared with third parties.',
+      'Costware is our term for custom-built enterprise software — ERP, CRM, POS, HR management, and other business systems tailored precisely to your workflows and requirements. Unlike generic off-the-shelf solutions, Costware is engineered around how your business actually operates, eliminating costly workarounds, unused features, and licensing fees that grow with your team.',
   },
   {
     value: 'item-2',
-    question: 'What is the difference between the Starter and Pro plans?',
+    question: 'What AI and machine learning services do you offer?',
     answer:
-      'The Starter plan is free forever and includes up to 3 projects and 5 actors with basic run monitoring. The Pro plan unlocks unlimited projects and actors, real-time analytics, the unified datastore, team collaboration, cost tracking, and priority support.',
+      'We build end-to-end AI/ML solutions including predictive analytics models, natural language processing (NLP) systems, computer vision applications, recommendation engines, and intelligent automation workflows. We work with your existing data or help you build the data infrastructure needed to power AI effectively.',
   },
   {
     value: 'item-3',
-    question: 'Can I use Annalytick with public Apify actors from the store?',
+    question: 'How do your data solutions work?',
     answer:
-      'Yes! You can sync both your own actors and any public actor from the Apify Store. Just enter the actor ID and Annalytick will import it into your workspace so you can track runs and data alongside your own actors.',
+      'Our data solutions cover the full stack: data pipeline engineering, ETL/ELT processes, data warehousing (BigQuery, Snowflake, Redshift), real-time streaming, and business intelligence dashboards. We help you collect, process, store, and visualize data so your team can make faster, smarter decisions.',
   },
   {
     value: 'item-4',
-    question: 'How does the unified datastore work?',
+    question: 'Do you build both iOS and Android mobile apps?',
     answer:
-      'The datastore combines output data from all successful runs for a given actor into a single, searchable table. You can filter, toggle columns, paginate through results, and export to CSV or JSON — all without writing any code.',
+      'Yes. We develop native iOS (Swift) and Android (Kotlin) applications, as well as cross-platform apps using React Native and Flutter. We handle the full lifecycle — design, development, testing, App Store/Play Store submission, and ongoing maintenance.',
   },
   {
     value: 'item-5',
-    question: 'Can I invite my team members?',
+    question: 'What does your web design and development service include?',
     answer:
-      'Absolutely. On the Pro and Enterprise plans, you can invite team members by email. They will receive an invitation link, and once they sign up, they are automatically added to your organization with the appropriate role and permissions.',
+      'We build everything from marketing websites and e-commerce platforms to complex SaaS web applications. Our web services include UI/UX design, front-end and back-end development, CMS integration, performance optimization, and ongoing support. We use modern frameworks like Next.js, React, and Node.js.',
   },
   {
     value: 'item-6',
-    question: 'Is my data secure?',
+    question: 'How long does a typical project take and what does it cost?',
     answer:
-      'Security is a top priority. All API keys are encrypted at rest, connections use HTTPS, and we support role-based access control. Enterprise customers also get SSO/SAML support and dedicated infrastructure options.',
+      'Project timelines and costs vary based on complexity and scope. A simple website can be delivered in 2–4 weeks, while a full Costware system or AI solution may take 3–6 months. We offer flexible engagement models including fixed-price projects, time-and-materials, and ongoing retainer arrangements. Contact us for a free consultation and tailored quote.',
   },
 ]
 
@@ -61,7 +61,7 @@ const FaqSection = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-muted-foreground">
-            Everything you need to know about Annalytick, Apify integration, pricing, and data security. Still have questions? We&apos;re here to help!
+            Everything you need to know about our services — Costware, AI/ML, data solutions, web development, and mobile apps. Still have questions? We&apos;re here to help!
           </p>
         </div>
 
@@ -94,7 +94,7 @@ const FaqSection = () => {
             </p>
             <Button className='cursor-pointer' asChild>
               <a href="#contact">
-                Contact Support
+                Contact Us
               </a>
             </Button>
           </div>

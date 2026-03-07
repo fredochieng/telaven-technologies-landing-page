@@ -1,10 +1,10 @@
 "use client"
 
 import {
-  Activity,
-  Database,
+  CheckCircle,
   Users,
-  FolderKanban
+  Briefcase,
+  Award
 } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { DotPattern } from '@/components/dot-pattern'
@@ -12,28 +12,28 @@ import { DotPattern } from '@/components/dot-pattern'
 
 const stats = [
   {
-    icon: FolderKanban,
-    value: '2,500+',
-    label: 'Projects Managed',
-    description: 'Across all teams'
-  },
-  {
-    icon: Activity,
-    value: '1.2M+',
-    label: 'Runs Tracked',
-    description: 'Monthly executions'
-  },
-  {
-    icon: Database,
-    value: '50M+',
-    label: 'Data Points',
-    description: 'Collected & stored'
+    icon: CheckCircle,
+    value: '100+',
+    label: 'Projects Delivered',
+    description: 'Across all 5 service areas'
   },
   {
     icon: Users,
-    value: '500+',
-    label: 'Teams',
-    description: 'Trust Annalytick'
+    value: '50+',
+    label: 'Happy Clients',
+    description: 'Startups, SMEs & enterprises'
+  },
+  {
+    icon: Briefcase,
+    value: '5+',
+    label: 'Years Experience',
+    description: 'Building enterprise technology'
+  },
+  {
+    icon: Award,
+    value: '98%',
+    label: 'Client Satisfaction',
+    description: 'Project success rate'
   }
 ]
 

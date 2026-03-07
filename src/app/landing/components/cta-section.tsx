@@ -1,7 +1,7 @@
 "use client"
 
 import Link from 'next/link'
-import { ArrowRight, TrendingUp, Zap } from 'lucide-react'
+import { ArrowRight, Rocket, Zap } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
@@ -16,54 +16,42 @@ export function CTASection() {
               {/* Badge and Stats */}
               <div className='flex flex-col items-center gap-4'>
                 <Badge variant='outline' className='flex items-center gap-2'>
-                  <TrendingUp className='size-3' />
-                  Start Scraping Smarter
+                  <Rocket className='size-3' />
+                  Ready to Transform Your Business?
                 </Badge>
-
-                <div className='text-muted-foreground flex items-center gap-4 text-sm'>
-                  <span className='flex items-center gap-1'>
-                    <div className='size-2 rounded-full bg-green-500' />
-                    500+ Teams
-                  </span>
-                  <Separator orientation='vertical' className='!h-4' />
-                  <span>1.2M+ Runs Tracked</span>
-                  <Separator orientation='vertical' className='!h-4' />
-                  <span>50M+ Data Points</span>
-                </div>
               </div>
 
               {/* Main Content */}
               <div className='space-y-6'>
                 <h1 className='text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl'>
-                  Take control of your
+                  Let's Build Your
                   <span className='flex sm:inline-flex justify-center'>
                     <span className='relative mx-2'>
                       <span className='bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent'>
-                        data pipeline
+                        Digital Future
                       </span>
                       <div className='absolute start-0 -bottom-2 h-1 w-full bg-gradient-to-r from-primary/30 to-secondary/30' />
                     </span>
-                    today
+                    Together
                   </span>
                 </h1>
 
                 <p className='text-muted-foreground mx-auto max-w-3xl text-balance lg:text-xl'>
-                  Stop juggling spreadsheets and Apify tabs. Organize actors into projects, schedule runs,
-                  combine data from every execution into one dataset, and export to Excel, CSV, JSON, or access via API.
+                  Partner with Telaven Technologies to build Costware, AI/ML systems, data solutions, web platforms, and mobile apps that drive measurable business results. Enterprise-grade technology for organizations of every size.
                 </p>
               </div>
 
               {/* CTA Buttons */}
               <div className='flex flex-col justify-center gap-4 sm:flex-row sm:gap-6'>
                 <Button size='lg' className='cursor-pointer px-8 py-6 text-lg font-medium' asChild>
-                  <Link href='/auth/sign-up'>
+                  <Link href='#contact'>
                     <Zap className='me-2 size-5' />
-                    Start Free Trial
+                    Start Your Project
                   </Link>
                 </Button>
                 <Button variant='outline' size='lg' className='cursor-pointer px-8 py-6 text-lg font-medium group' asChild>
-                  <a href='#pricing'>
-                    View Pricing
+                  <a href='#features'>
+                    View Services
                     <ArrowRight className='ms-2 size-4 transition-transform group-hover:translate-x-1' />
                   </a>
                 </Button>
@@ -73,15 +61,15 @@ export function CTASection() {
               <div className='text-muted-foreground flex flex-wrap items-center justify-center gap-6 text-sm'>
                 <div className='flex items-center gap-2'>
                     <div className='size-2 rounded-full bg-green-600 dark:bg-green-400 me-1' />
-                  <span>Free plan available</span>
+                  <span>Free consultation</span>
                 </div>
                 <div className='flex items-center gap-2'>
                     <div className='size-2 rounded-full bg-blue-600 dark:bg-blue-400 me-1' />
-                  <span>No credit card required</span>
+                  <span>Flexible engagement models</span>
                 </div>
                 <div className='flex items-center gap-2'>
                     <div className='size-2 rounded-full bg-purple-600 dark:bg-purple-400 me-1' />
-                  <span>Setup in under 2 minutes</span>
+                  <span>Enterprise-ready solutions</span>
                 </div>
               </div>
             </div>

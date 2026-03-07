@@ -7,8 +7,8 @@ import { Toaster } from "@/components/ui/sonner";
 import { outfit } from "@/lib/fonts";
 
 export const metadata: Metadata = {
-  title: "Telaven - SaaS Dashboard",
-  description: "A modern SaaS starter template built with Next.js and shadcn/ui",
+  title: "Telaven Solutions - Enterprise Technology Solutions",
+  description: "Custom software development, mobile apps, data analytics, and machine learning solutions for startups, SMEs, and enterprises.",
 };
 
 export default function RootLayout({

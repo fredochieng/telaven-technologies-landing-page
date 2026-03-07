@@ -12,14 +12,14 @@ export function TermsPageContent() {
       <section>
         <h2 className="text-xl font-semibold mb-3">1. Acceptance of Terms</h2>
         <p className="text-muted-foreground leading-relaxed">
-          By accessing or using Annalytick (&quot;the Service&quot;), you agree to be bound by these Terms of Service. If you do not agree to these terms, you may not use the Service. These terms apply to all users, including visitors, registered users, and API consumers.
+          By accessing or using Telaven Technologies (&quot;the Service&quot;), you agree to be bound by these Terms of Service. If you do not agree to these terms, you may not use the Service. These terms apply to all users, including visitors, registered users, and API consumers.
         </p>
       </section>
 
       <section>
         <h2 className="text-xl font-semibold mb-3">2. Description of Service</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Annalytick is a web scraping project management platform that enables users to organize Apify actors into projects, schedule and manage runs, combine data from multiple runs into unified datasets, and access data via export or API. The Service includes the web dashboard, REST API, and all related tools and documentation.
+          Telaven Technologies is a enterprise technology platform that enables users to organize our platform actors into projects, schedule and manage runs, combine data from multiple runs into unified datasets, and access data via export or API. The Service includes the web dashboard, REST API, and all related tools and documentation.
         </p>
       </section>
 
@@ -55,7 +55,7 @@ export function TermsPageContent() {
       <section>
         <h2 className="text-xl font-semibold mb-3">5. API Usage</h2>
         <p className="text-muted-foreground leading-relaxed mb-3">
-          Access to the Annalytick API is governed by these terms and the following conditions:
+          Access to the Telaven Technologies API is governed by these terms and the following conditions:
         </p>
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
           <li>API keys are confidential and must not be shared publicly or embedded in client-side code</li>
@@ -68,7 +68,7 @@ export function TermsPageContent() {
       <section>
         <h2 className="text-xl font-semibold mb-3">6. Data Ownership</h2>
         <p className="text-muted-foreground leading-relaxed">
-          You retain ownership of all data you collect through the Service. Annalytick does not claim any intellectual property rights over your scraped data. We store and process your data solely to provide the Service. You are responsible for ensuring that your data collection activities comply with applicable laws and the terms of the websites you scrape.
+          You retain ownership of all data you collect through the Service. Telaven Technologies does not claim any intellectual property rights over your processed data. We store and process your data solely to provide the Service. You are responsible for ensuring that your data processing activities comply with applicable laws and the terms of the services you use.
         </p>
       </section>
 
@@ -95,7 +95,7 @@ export function TermsPageContent() {
       <section>
         <h2 className="text-xl font-semibold mb-3">9. Limitation of Liability</h2>
         <p className="text-muted-foreground leading-relaxed">
-          To the maximum extent permitted by law, Annalytick shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or business opportunities, arising from your use of the Service. Our total liability shall not exceed the amount you paid for the Service in the twelve months preceding the claim.
+          To the maximum extent permitted by law, Telaven Technologies shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or business opportunities, arising from your use of the Service. Our total liability shall not exceed the amount you paid for the Service in the twelve months preceding the claim.
         </p>
       </section>
 
@@ -123,7 +123,7 @@ export function TermsPageContent() {
       <section>
         <h2 className="text-xl font-semibold mb-3">13. Contact</h2>
         <p className="text-muted-foreground leading-relaxed">
-          For questions about these Terms of Service, contact us at <a href="mailto:legal@annalytick.com" className="text-primary hover:underline">legal@annalytick.com</a> or through our <a href="/landing#contact" className="text-primary hover:underline">contact form</a>.
+          For questions about these Terms of Service, contact us at <a href="mailto:legal@telaventechnologies.com" className="text-primary hover:underline">legal@telaventechnologies.com</a> or through our <a href="/landing#contact" className="text-primary hover:underline">contact form</a>.
         </p>
       </section>
     </LegalPageLayout>

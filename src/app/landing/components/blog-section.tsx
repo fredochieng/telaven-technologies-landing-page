@@ -9,26 +9,26 @@ const blogs = [
     {
       id: 1,
       image: 'https://ui.shadcn.com/placeholder.svg',
-      category: 'Web Scraping',
-      title: 'Scaling Apify Actors for Enterprise Data Collection',
+      category: 'AI & Machine Learning',
+      title: 'How AI is Transforming Business Operations in 2025',
       description:
-        'Learn how to organize and manage dozens of Apify actors across multiple projects without losing track of runs, costs, or data quality.',
+        'From predictive analytics to intelligent automation, discover how businesses are leveraging machine learning to cut costs, reduce manual work, and scale faster.',
     },
     {
       id: 2,
       image: 'https://ui.shadcn.com/placeholder.svg',
-      category: 'Best Practices',
-      title: 'Tracking Scraping Costs: Why It Matters',
+      category: 'Costware',
+      title: 'Why Off-the-Shelf Software Fails Growing Businesses',
       description:
-        'Most teams have no idea how much their web scraping costs. Here is how Annalytick gives you full cost visibility per actor, per project.',
+        'Generic ERP and CRM tools are built for everyone — meaning they\'re perfect for no one. Learn how custom enterprise software (Costware) delivers a decisive competitive edge.',
     },
     {
       id: 3,
       image: 'https://ui.shadcn.com/placeholder.svg',
-      category: 'Product Update',
-      title: 'Introducing the Unified Datastore',
+      category: 'Data Solutions',
+      title: 'Building a Modern Data Stack from the Ground Up',
       description:
-        'Browse, search, and export combined output data from all your actor runs in one place — no more downloading individual datasets.',
+        'A practical guide to designing scalable data pipelines, choosing the right warehouse, and creating a data culture that drives smarter decisions across your organization.',
     },
   ]
 
@@ -40,10 +40,10 @@ export function BlogSection() {
         <div className="mx-auto max-w-2xl text-center mb-16">
           <Badge variant="outline" className="mb-4">Latest Insights</Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
-            From the Annalytick blog
+            From the Telaven Technologies Blog
           </h2>
           <p className="text-lg text-muted-foreground">
-            Tips, tutorials, and product updates to help you get the most out of your web scraping workflows.
+            Technology insights, industry trends, and practical guides on AI, data, Costware, web development, and mobile apps.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ export function BlogSection() {
                     onClick={e => e.preventDefault()}
                     className="inline-flex items-center gap-2 text-primary hover:underline cursor-pointer"
                   >
-                    Learn More
+                    Read Article
                     <ArrowRight className="size-4" />
                   </a>
                 </div>
