@@ -8,12 +8,12 @@ export function SecurityPageContent() {
   return (
     <LegalPageLayout
       badge="Security"
-      title="Security at Telaven Technologies"
+      title="Security at Telaven Solutions"
       lastUpdated="February 17, 2026"
     >
       <section>
         <p className="text-muted-foreground leading-relaxed text-lg">
-          Security is foundational to everything we build at Telaven Technologies. We understand that you trust us with your data and credentials, and we take that responsibility seriously. This page outlines the measures we implement to keep your data safe.
+          Security is foundational to everything we build at Telaven Solutions. We understand that you trust us with your data and credentials, and we take that responsibility seriously. This page outlines the measures we implement to keep your data safe.
         </p>
       </section>
 
@@ -138,7 +138,7 @@ export function SecurityPageContent() {
       <section>
         <h2 className="text-xl font-semibold mb-3">Responsible Disclosure</h2>
         <p className="text-muted-foreground leading-relaxed">
-          If you discover a security vulnerability in Telaven Technologies, we encourage you to report it responsibly. Please email <a href="mailto:security@telaventechnologies.com" className="text-primary hover:underline">security@telaventechnologies.com</a> with details of the vulnerability. We will acknowledge your report within 48 hours and work to resolve the issue promptly. We ask that you do not publicly disclose the vulnerability until we have had a chance to address it.
+          If you discover a security vulnerability in Telaven Solutions, we encourage you to report it responsibly. Please email <a href="mailto:security@telaventechnologies.com" className="text-primary hover:underline">security@telaventechnologies.com</a> with details of the vulnerability. We will acknowledge your report within 48 hours and work to resolve the issue promptly. We ask that you do not publicly disclose the vulnerability until we have had a chance to address it.
         </p>
       </section>
 

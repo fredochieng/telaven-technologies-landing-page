@@ -38,22 +38,18 @@ export function LandingThemeCustomizer({ open, onOpenChange }: LandingThemeCusto
 
   const { toggleTheme } = useCircularTransition()
 
-  const [selectedTheme, setSelectedTheme] = React.useState("default")
+  const [selectedTheme, setSelectedTheme] = React.useState("orange")
   const [selectedTweakcnTheme, setSelectedTweakcnTheme] = React.useState("")
   const [selectedRadius, setSelectedRadius] = React.useState("0.5rem")
   const [importModalOpen, setImportModalOpen] = React.useState(false)
   const [importedTheme, setImportedTheme] = React.useState<ImportedTheme | null>(null)
 
   const handleReset = () => {
-    // Reset all state variables to initial values
-    setSelectedTheme("")
+    setSelectedTheme("orange")
     setSelectedTweakcnTheme("")
     setSelectedRadius("0.5rem")
     setImportedTheme(null)
     setBrandColorsValues({})
-
-    // Reset theme and radius to defaults
-    resetTheme()
     applyRadius("0.5rem")
   }
 

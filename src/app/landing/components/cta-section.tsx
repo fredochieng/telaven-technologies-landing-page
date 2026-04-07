@@ -37,7 +37,7 @@ export function CTASection() {
                 </h1>
 
                 <p className='text-muted-foreground mx-auto max-w-3xl text-balance lg:text-xl'>
-                  Partner with Telaven Technologies to build Costware, AI/ML systems, data solutions, web platforms, and mobile apps that drive measurable business results. Enterprise-grade technology for organizations of every size.
+                  Partner with Telaven Solutions to build custom enterprise software, AI/ML systems, data solutions, web platforms, mobile apps, and communications infrastructure that drive measurable business results. Enterprise-grade technology for organizations of every size.
                 </p>
               </div>
 

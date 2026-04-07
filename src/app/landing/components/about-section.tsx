@@ -37,13 +37,13 @@ export function AboutSection() {
         {/* Section Header */}
         <div className="mx-auto max-w-4xl text-center mb-16">
           <Badge variant="outline" className="mb-4">
-            About Telaven Technologies
+            About Telaven Solutions
           </Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
             Your Technology Partner for Digital Transformation
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Telaven Technologies is a full-service technology company delivering Costware (custom enterprise software), AI/ML solutions, data engineering, web development, and mobile apps. We partner with startups, SMEs, enterprises, and institutions to build technology that drives real business transformation.
+            Telaven Solutions is a full-service technology company delivering custom enterprise software, AI/ML solutions, data engineering, web development, mobile apps, and business communications — including bulk SMS, WhatsApp Business API, email marketing, and system integrations. We partner with startups, SMEs, enterprises, and institutions to build technology that drives real business transformation.
           </p>
         </div>
 

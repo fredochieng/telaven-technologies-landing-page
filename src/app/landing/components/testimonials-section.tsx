@@ -13,10 +13,10 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     name: 'Sarah Kimani',
-    role: 'CEO, EduTech Solutions',
+    role: 'CEO',
     image: 'https://notion-avatars.netlify.app/api/avatar?preset=female-1',
     quote:
-      'Telaven Technologies built our school management system from scratch. The platform has streamlined our operations and improved parent-teacher communication significantly.',
+      'Telaven Solutions built our school management system from scratch. The platform has streamlined our operations and improved parent-teacher communication significantly.',
   },
   {
     name: 'David Mwangi',
@@ -26,14 +26,14 @@ const testimonials: Testimonial[] = [
   },
   {
     name: 'Amina Hassan',
-    role: 'Founder, RetailHub',
+    role: 'Founder',
     image: 'https://notion-avatars.netlify.app/api/avatar?preset=female-2',
     quote:
       'The mobile app they developed for our retail business has increased customer engagement by 60%. Professional team, quality work.',
   },
   {
     name: 'Peter Ochieng',
-    role: 'CTO, FinServe Ltd',
+    role: 'CTO',
     image: 'https://notion-avatars.netlify.app/api/avatar?preset=male-2',
     quote:
       'Telaven delivered our custom software on time and within budget. Their technical expertise and understanding of our business needs was impressive.',
@@ -69,7 +69,7 @@ const testimonials: Testimonial[] = [
     role: 'VP of Operations',
     image: 'https://notion-avatars.netlify.app/api/avatar?preset=female-5',
     quote:
-      'Telaven Technologies transformed our manual processes into an efficient digital workflow. The ROI has been remarkable.',
+      'Telaven Solutions transformed our manual processes into an efficient digital workflow. The ROI has been remarkable.',
   },
   {
     name: 'Robert Kamau',
@@ -86,7 +86,7 @@ const testimonials: Testimonial[] = [
   },
   {
     name: 'Daniel Omondi',
-    role: 'CFO, AgriTech Co',
+    role: 'CFO',
     image: 'https://notion-avatars.netlify.app/api/avatar?preset=male-6',
     quote: 'Their business intelligence dashboard gives us real-time financial insights. Decision-making has never been easier.',
   },

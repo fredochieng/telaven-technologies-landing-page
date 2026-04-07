@@ -37,7 +37,7 @@ export async function middleware(request: NextRequest) {
   // ─── Root Domain: Only serve landing pages ──────────────────────────────
   if (!isAppSubdomain(hostname)) {
     // Allow landing page paths, static assets, and API on root domain
-    const isLandingPath = pathname === '/' || pathname.startsWith('/landing')
+    const isLandingPath = pathname === '/' || pathname.startsWith('/landing') || pathname.startsWith('/services')
     const isStaticOrApi = pathname.startsWith('/api') ||
       pathname.startsWith('/_next') ||
       pathname.startsWith('/favicon') ||

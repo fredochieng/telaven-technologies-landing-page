@@ -23,9 +23,23 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { Mail, MessageCircle, BookOpen, Loader2 } from 'lucide-react'
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command"
+import { Mail, MessageCircle, BookOpen, Loader2, Check, ChevronsUpDown } from 'lucide-react'
 import { useState } from 'react'
 import { useToast } from '@/hooks/use-toast'
+import { cn } from '@/lib/utils'
 import PhoneInput, { getCountries, getCountryCallingCode } from 'react-phone-number-input'
 import type { Country } from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
@@ -55,6 +69,7 @@ const contactFormSchema = z.object({
 
 export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [countryOpen, setCountryOpen] = useState(false)
   const { toast } = useToast()
 
   const form = useForm<z.infer<typeof contactFormSchema>>({
@@ -134,8 +149,8 @@ export function ContactSection() {
                   Get in touch with our team for project inquiries, consultations, or general questions.
                 </p>
                 <Button variant="outline" size="sm" className="cursor-pointer" asChild>
-                  <a href="mailto:info@telaventechnologies.com">
-                    info@telaventechnologies.com
+                  <a href="mailto:hello@telaven.com">
+                    hello@telaven.com
                   </a>
                 </Button>
               </CardContent>
@@ -172,7 +187,7 @@ export function ContactSection() {
                   Explore our full range of technology solutions and see how we can help your business.
                 </p>
                 <Button variant="outline" size="sm" className="cursor-pointer" asChild>
-                  <a href="#features">
+                  <a href="/services">
                     View Services
                   </a>
                 </Button>
@@ -201,7 +216,7 @@ export function ContactSection() {
                           <FormItem>
                             <FormLabel>Full name</FormLabel>
                             <FormControl>
-                              <Input placeholder="John Doe" {...field} />
+                              <Input placeholder="Enter your name" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -214,7 +229,7 @@ export function ContactSection() {
                           <FormItem>
                             <FormLabel>Email</FormLabel>
                             <FormControl>
-                              <Input type="email" placeholder="john@example.com" {...field} />
+                              <Input type="email" placeholder="Enter your email" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -228,25 +243,56 @@ export function ContactSection() {
                         control={form.control}
                         name="country"
                         render={({ field }) => (
-                          <FormItem>
+                          <FormItem className="flex flex-col">
                             <FormLabel>Country</FormLabel>
-                            <Select
-                              onValueChange={field.onChange}
-                              value={field.value}
-                            >
-                              <FormControl>
-                                <SelectTrigger className="w-full">
-                                  <SelectValue placeholder="Select country" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent className="max-h-64">
-                                {countryList.map(({ code, label, callingCode }) => (
-                                  <SelectItem key={code} value={code}>
-                                    {label} (+{callingCode})
-                                  </SelectItem>
-                                ))}
-                              </SelectContent>
-                            </Select>
+                            <Popover open={countryOpen} onOpenChange={setCountryOpen}>
+                              <PopoverTrigger asChild>
+                                <FormControl>
+                                  <Button
+                                    variant="outline"
+                                    role="combobox"
+                                    aria-expanded={countryOpen}
+                                    className={cn(
+                                      "w-full justify-between",
+                                      !field.value && "text-muted-foreground"
+                                    )}
+                                  >
+                                    {field.value
+                                      ? countryList.find((country) => country.code === field.value)?.label
+                                      : "Select country"}
+                                    <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                                  </Button>
+                                </FormControl>
+                              </PopoverTrigger>
+                              <PopoverContent className="p-0" style={{ width: 'var(--radix-popover-trigger-width)' }} align="start">
+                                <Command>
+                                  <CommandInput placeholder="Search country..." />
+                                  <CommandList>
+                                    <CommandEmpty>No country found.</CommandEmpty>
+                                    <CommandGroup>
+                                      {countryList.map(({ code, label, callingCode }) => (
+                                        <CommandItem
+                                          key={code}
+                                          value={`${label} ${code}`}
+                                          onSelect={() => {
+                                            form.setValue("country", code)
+                                            setCountryOpen(false)
+                                          }}
+                                        >
+                                          <Check
+                                            className={cn(
+                                              "mr-2 h-4 w-4",
+                                              field.value === code ? "opacity-100" : "opacity-0"
+                                            )}
+                                          />
+                                          {label} (+{callingCode})
+                                        </CommandItem>
+                                      ))}
+                                    </CommandGroup>
+                                  </CommandList>
+                                </Command>
+                              </PopoverContent>
+                            </Popover>
                             <FormMessage />
                           </FormItem>
                         )}
@@ -261,11 +307,15 @@ export function ContactSection() {
                             <>
                               <PhoneInput
                                 international
+                                countryCallingCodeEditable={false}
                                 defaultCountry={selectedCountry || "US"}
                                 country={selectedCountry || undefined}
                                 value={field.value}
                                 onChange={field.onChange}
                                 className="phone-input-wrapper"
+                                countrySelectProps={{
+                                  className: "country-select-dropdown"
+                                }}
                               />
                               {fieldState.error && (
                                 <p className="text-sm font-medium text-destructive">
@@ -302,7 +352,7 @@ export function ContactSection() {
                           <FormLabel>Message</FormLabel>
                           <FormControl>
                             <Textarea
-                              placeholder="Tell us about your project requirements and how we can help..."
+                              placeholder="Tell us how we can help you..."
                               rows={10}
                               className="min-h-50"
                               {...field}
@@ -313,16 +363,18 @@ export function ContactSection() {
                       )}
                     />
 
-                    <Button type="submit" className="w-full cursor-pointer" disabled={isSubmitting}>
-                      {isSubmitting ? (
-                        <>
-                          <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                          Sending...
-                        </>
-                      ) : (
-                        'Send Message'
-                      )}
-                    </Button>
+                    <div className="flex justify-end">
+                      <Button type="submit" className="cursor-pointer px-10" disabled={isSubmitting}>
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                            Sending...
+                          </>
+                        ) : (
+                          'Send Message'
+                        )}
+                      </Button>
+                    </div>
                   </form>
                 </Form>
               </CardContent>

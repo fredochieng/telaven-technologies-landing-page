@@ -17,10 +17,10 @@ const blogs = [
     {
       id: 2,
       image: 'https://ui.shadcn.com/placeholder.svg',
-      category: 'Costware',
+      category: 'Custom Software',
       title: 'Why Off-the-Shelf Software Fails Growing Businesses',
       description:
-        'Generic ERP and CRM tools are built for everyone — meaning they\'re perfect for no one. Learn how custom enterprise software (Costware) delivers a decisive competitive edge.',
+        'Generic ERP and CRM tools are built for everyone — meaning they\'re perfect for no one. Learn how custom enterprise software delivers a decisive competitive edge.',
     },
     {
       id: 3,
@@ -40,10 +40,10 @@ export function BlogSection() {
         <div className="mx-auto max-w-2xl text-center mb-16">
           <Badge variant="outline" className="mb-4">Latest Insights</Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
-            From the Telaven Technologies Blog
+            From the Telaven Solutions Blog
           </h2>
           <p className="text-lg text-muted-foreground">
-            Technology insights, industry trends, and practical guides on AI, data, Costware, web development, and mobile apps.
+            Technology insights, industry trends, and practical guides on AI, data, custom software, web development, and mobile apps.
           </p>
         </div>
 

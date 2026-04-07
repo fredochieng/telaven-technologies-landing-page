@@ -12,7 +12,7 @@ export function DpaPageContent() {
       <section>
         <h2 className="text-xl font-semibold mb-3">1. Introduction</h2>
         <p className="text-muted-foreground leading-relaxed">
-          This Data Processing Agreement (&quot;DPA&quot;) forms part of the agreement between you (&quot;Data Controller&quot; or &quot;Customer&quot;) and Telaven Technologies (&quot;Data Processor&quot; or &quot;we&quot;) for the provision of the Telaven Technologies platform services. This DPA applies to the extent that Telaven Technologies processes personal data on behalf of the Customer in the course of providing the Service.
+          This Data Processing Agreement (&quot;DPA&quot;) forms part of the agreement between you (&quot;Data Controller&quot; or &quot;Customer&quot;) and Telaven Solutions (&quot;Data Processor&quot; or &quot;we&quot;) for the provision of the Telaven Solutions platform services. This DPA applies to the extent that Telaven Solutions processes personal data on behalf of the Customer in the course of providing the Service.
         </p>
       </section>
 
@@ -21,7 +21,7 @@ export function DpaPageContent() {
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
           <li><strong>Personal Data:</strong> Any information relating to an identified or identifiable natural person, as defined by applicable data protection laws</li>
           <li><strong>Processing:</strong> Any operation performed on personal data, including collection, storage, retrieval, use, disclosure, and deletion</li>
-          <li><strong>Sub-processor:</strong> Any third party engaged by Telaven Technologies to process personal data on behalf of the Customer</li>
+          <li><strong>Sub-processor:</strong> Any third party engaged by Telaven Solutions to process personal data on behalf of the Customer</li>
           <li><strong>Data Subject:</strong> An identified or identifiable natural person whose personal data is processed</li>
         </ul>
       </section>
@@ -29,7 +29,7 @@ export function DpaPageContent() {
       <section>
         <h2 className="text-xl font-semibold mb-3">3. Scope of Processing</h2>
         <p className="text-muted-foreground leading-relaxed mb-3">
-          Telaven Technologies processes personal data solely for the purpose of providing the Service as described in our Terms of Service. The types of personal data processed may include:
+          Telaven Solutions processes personal data solely for the purpose of providing the Service as described in our Terms of Service. The types of personal data processed may include:
         </p>
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
           <li>Customer account information (name, email, organization details)</li>
@@ -41,7 +41,7 @@ export function DpaPageContent() {
       <section>
         <h2 className="text-xl font-semibold mb-3">4. Obligations of the Data Processor</h2>
         <p className="text-muted-foreground leading-relaxed mb-3">
-          Telaven Technologies shall:
+          Telaven Solutions shall:
         </p>
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
           <li>Process personal data only on documented instructions from the Customer</li>
@@ -57,7 +57,7 @@ export function DpaPageContent() {
       <section>
         <h2 className="text-xl font-semibold mb-3">5. Sub-processors</h2>
         <p className="text-muted-foreground leading-relaxed mb-3">
-          Telaven Technologies uses the following categories of sub-processors:
+          Telaven Solutions uses the following categories of sub-processors:
         </p>
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
           <li><strong>Cloud Infrastructure:</strong> For hosting and data storage</li>
@@ -73,14 +73,14 @@ export function DpaPageContent() {
       <section>
         <h2 className="text-xl font-semibold mb-3">6. Data Transfers</h2>
         <p className="text-muted-foreground leading-relaxed">
-          If personal data is transferred outside the European Economic Area (EEA), Telaven Technologies ensures that appropriate safeguards are in place, such as Standard Contractual Clauses (SCCs) approved by the European Commission, or other legally recognized transfer mechanisms.
+          If personal data is transferred outside the European Economic Area (EEA), Telaven Solutions ensures that appropriate safeguards are in place, such as Standard Contractual Clauses (SCCs) approved by the European Commission, or other legally recognized transfer mechanisms.
         </p>
       </section>
 
       <section>
         <h2 className="text-xl font-semibold mb-3">7. Security Measures</h2>
         <p className="text-muted-foreground leading-relaxed mb-3">
-          Telaven Technologies implements the following technical and organizational measures:
+          Telaven Solutions implements the following technical and organizational measures:
         </p>
         <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
           <li>Encryption of data in transit (TLS 1.2+) and at rest (AES-256)</li>
@@ -98,14 +98,14 @@ export function DpaPageContent() {
       <section>
         <h2 className="text-xl font-semibold mb-3">8. Audits</h2>
         <p className="text-muted-foreground leading-relaxed">
-          The Customer may request an audit of Telaven Technologies&apos;s data processing practices, subject to reasonable notice and scope. Telaven Technologies will cooperate with such audits and provide necessary documentation. Audits shall be conducted during normal business hours and shall not unreasonably disrupt Telaven Technologies&apos;s operations.
+          The Customer may request an audit of Telaven Solutions&apos;s data processing practices, subject to reasonable notice and scope. Telaven Solutions will cooperate with such audits and provide necessary documentation. Audits shall be conducted during normal business hours and shall not unreasonably disrupt Telaven Solutions&apos;s operations.
         </p>
       </section>
 
       <section>
         <h2 className="text-xl font-semibold mb-3">9. Duration and Termination</h2>
         <p className="text-muted-foreground leading-relaxed">
-          This DPA remains in effect for the duration of the Service agreement. Upon termination, Telaven Technologies will delete all personal data within 30 days unless retention is required by applicable law. The Customer may request a copy of their data in a machine-readable format before deletion.
+          This DPA remains in effect for the duration of the Service agreement. Upon termination, Telaven Solutions will delete all personal data within 30 days unless retention is required by applicable law. The Customer may request a copy of their data in a machine-readable format before deletion.
         </p>
       </section>
 

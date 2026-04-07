@@ -12,7 +12,7 @@ export function PrivacyPageContent() {
       <section>
         <h2 className="text-xl font-semibold mb-3">1. Introduction</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Telaven Technologies (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our enterprise technology platform, including our website, dashboard, and API services (collectively, the &quot;Service&quot;).
+          Telaven Solutions (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our enterprise technology platform, including our website, dashboard, and API services (collectively, the &quot;Service&quot;).
         </p>
       </section>
 

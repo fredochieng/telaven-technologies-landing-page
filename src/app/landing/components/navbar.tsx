@@ -2,14 +2,18 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname, useRouter } from 'next/navigation'
 import { Menu, X, Moon, Sun } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   NavigationMenu,
+  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
+  NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
+import { MegaMenu } from '@/components/landing/mega-menu'
 import {
   Sheet,
   SheetContent,
@@ -22,12 +26,18 @@ import { ModeToggle } from '@/components/mode-toggle'
 import { useTheme } from '@/hooks/use-theme'
 
 const navigationItems = [
-  { name: 'Home', href: '#hero' },
-  { name: 'Services', href: '#features' },
+  { name: 'Home', href: '/' },
+  { name: 'Services', href: '/services' },
   { name: 'About', href: '#about' },
-  { name: 'Team', href: '#team' },
   { name: 'Contact', href: '#contact' },
 ]
+
+const isNavItemActive = (href: string, pathname: string, isHome: boolean) => {
+  if (href === '/') return isHome
+  if (href.startsWith('#')) return false
+  if (href === '/services') return pathname.startsWith('/services')
+  return pathname === href
+}
 
 const smoothScrollTo = (targetId: string) => {
   if (targetId.startsWith('#')) {
@@ -44,6 +54,27 @@ const smoothScrollTo = (targetId: string) => {
 export function LandingNavbar() {
   const [isOpen, setIsOpen] = useState(false)
   const { setTheme, theme } = useTheme()
+  const pathname = usePathname()
+  const router = useRouter()
+
+  const isHome = pathname === '/' || pathname === '/landing'
+
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    e.preventDefault()
+    if (!href.startsWith('#')) {
+      if (href === '/' && isHome) {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      } else {
+        router.push(href)
+      }
+      return
+    }
+    if (isHome) {
+      smoothScrollTo(href)
+    } else {
+      router.push(`/${href}`)
+    }
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
@@ -56,30 +87,34 @@ export function LandingNavbar() {
 
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
-            {navigationItems.map((item) => (
-              <NavigationMenuItem key={item.name}>
-                <NavigationMenuLink
-                  className="group inline-flex h-10 w-max items-center justify-center px-4 py-2 text-sm font-medium transition-colors hover:text-primary focus:text-primary focus:outline-none cursor-pointer"
-                  onClick={(e: React.MouseEvent) => {
-                    e.preventDefault()
-                    if (item.href.startsWith('#')) {
-                      smoothScrollTo(item.href)
-                    } else {
-                      window.location.href = item.href
-                    }
-                  }}
-                >
-                  {item.name}
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            ))}
+            {navigationItems.map((item) =>
+              item.name === 'Services' ? (
+                <NavigationMenuItem key={item.name}>
+                  <NavigationMenuTrigger className={`h-10 px-4 py-2 text-sm font-medium transition-colors hover:text-primary focus:text-primary focus:outline-none cursor-pointer bg-transparent ${pathname.startsWith('/services') ? 'text-primary' : ''}`}>
+                    Services
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <MegaMenu />
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              ) : (
+                <NavigationMenuItem key={item.name}>
+                  <NavigationMenuLink
+                    className={`group inline-flex h-10 w-max items-center justify-center px-4 py-2 text-sm font-medium transition-colors hover:text-primary focus:text-primary focus:outline-none cursor-pointer ${isNavItemActive(item.href, pathname, isHome) ? 'text-primary' : ''}`}
+                    onClick={(e: React.MouseEvent) => handleNavClick(e, item.href)}
+                  >
+                    {item.name}
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              )
+            )}
           </NavigationMenuList>
         </NavigationMenu>
 
         <div className="hidden md:flex items-center space-x-2">
           <ModeToggle variant="ghost" />
           <Button asChild className="cursor-pointer">
-            <Link href="#contact">Get Started</Link>
+            <Link href={isHome ? '#contact' : '/#contact'}>Get Started</Link>
           </Button>
         </div>
 
@@ -118,13 +153,10 @@ export function LandingNavbar() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="flex items-center px-4 py-3 text-base font-medium rounded-lg transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer"
+                      className={`flex items-center px-4 py-3 text-base font-medium rounded-lg transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer ${isNavItemActive(item.href, pathname, isHome) ? 'bg-accent text-primary' : ''}`}
                       onClick={(e) => {
                         setIsOpen(false)
-                        if (item.href.startsWith('#')) {
-                          e.preventDefault()
-                          setTimeout(() => smoothScrollTo(item.href), 100)
-                        }
+                        handleNavClick(e, item.href)
                       }}
                     >
                       {item.name}
@@ -135,7 +167,7 @@ export function LandingNavbar() {
 
               <div className="border-t p-6">
                 <Button asChild size="lg" className="w-full cursor-pointer">
-                  <Link href="#contact">Get Started</Link>
+                  <Link href={isHome ? '#contact' : '/#contact'}>Get Started</Link>
                 </Button>
               </div>
             </div>

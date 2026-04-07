@@ -1,142 +1,166 @@
 "use client"
 
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import {
-  Shield,
-  BarChart3,
+  Brain,
   Database,
-  Building2,
-  Rocket,
-  Settings,
+  Code2,
+  Smartphone,
+  Globe,
+  BarChart3,
+  Headphones,
+  Plug,
+  MessageSquare,
+  MessageCircle,
+  Mail,
   Zap,
-  Package,
-  Layout,
-  Crown,
-  Palette
 } from 'lucide-react'
 
 const menuSections = [
   {
-    title: 'Browse Products',
+    title: 'AI, Data & Custom Software',
     items: [
       {
-        title: 'Free Blocks',
-        description: 'Essential UI components and sections',
-        icon: Package,
-        href: '#free-blocks'
+        title: 'AI & Machine Learning',
+        description: 'ML models, NLP, computer vision, and predictive analytics',
+        icon: Brain,
+        href: '/services/ai',
+        color: 'text-violet-500'
       },
       {
-        title: 'Premium Templates',
-        description: 'Complete page templates and layouts',
-        icon: Crown,
-        href: '#premium-templates'
-      },
-      {
-        title: 'Admin Dashboards',
-        description: 'Full-featured dashboard solutions',
-        icon: BarChart3,
-        href: '#admin-dashboards'
-      },
-      {
-        title: 'Landing Pages',
-        description: 'Marketing and product landing templates',
-        icon: Layout,
-        href: '#landing-pages'
-      }
-    ]
-  },
-  {
-    title: 'Categories',
-    items: [
-      {
-        title: 'E-commerce',
-        description: 'Online store admin panels and components',
-        icon: Building2,
-        href: '#ecommerce'
-      },
-      {
-        title: 'SaaS Dashboards',
-        description: 'Application admin interfaces',
-        icon: Rocket,
-        href: '#saas-dashboards'
-      },
-      {
-        title: 'Analytics',
-        description: 'Data visualization and reporting templates',
-        icon: BarChart3,
-        href: '#analytics'
-      },
-      {
-        title: 'Authentication',
-        description: 'Login, signup, and user management pages',
-        icon: Shield,
-        href: '#authentication'
-      }
-    ]
-  },
-  {
-    title: 'Resources',
-    items: [
-      {
-        title: 'Documentation',
-        description: 'Integration guides and setup instructions',
+        title: 'Data Engineering',
+        description: 'Pipelines, warehouses, ETL/ELT, and real-time streaming',
         icon: Database,
-        href: '#docs'
+        href: '/services/data-engineering',
+        color: 'text-blue-500'
       },
       {
-        title: 'Component Showcase',
-        description: 'Interactive preview of all components',
-        icon: Palette,
-        href: '#showcase'
+        title: 'Custom Software Development',
+        description: 'ERP, CRM, POS, and tailor-made business systems',
+        icon: Code2,
+        href: '/services/custom-software',
+        color: 'text-emerald-500'
       },
       {
-        title: 'GitHub Repository',
-        description: 'Open source foundation and community',
-        icon: Settings,
-        href: '#github'
+        title: 'Data Analytics & BI',
+        description: 'Interactive dashboards and business intelligence',
+        icon: BarChart3,
+        href: '/services/data-analytics',
+        color: 'text-amber-500'
+      }
+    ]
+  },
+  {
+    title: 'Web, Mobile & Consultancy',
+    items: [
+      {
+        title: 'Web Development',
+        description: 'Marketing sites to complex SaaS platforms',
+        icon: Globe,
+        href: '/services/web-development',
+        color: 'text-cyan-500'
       },
       {
-        title: 'Design System',
-        description: 'shadcn/ui standards and customization',
+        title: 'Mobile App Development',
+        description: 'iOS & Android with React Native and Flutter',
+        icon: Smartphone,
+        href: '/services/mobile-apps',
+        color: 'text-pink-500'
+      },
+      {
+        title: 'IT Consultancy',
+        description: 'Strategic guidance for digital transformation',
+        icon: Headphones,
+        href: '/services/consultancy',
+        color: 'text-rose-500'
+      }
+    ]
+  },
+  {
+    title: 'Communications & Integrations',
+    items: [
+      {
+        title: 'System Integrations',
+        description: 'Connect ERP, CRM, payment gateways, and APIs',
+        icon: Plug,
+        href: '/services/system-integrations',
+        color: 'text-blue-500'
+      },
+      {
+        title: 'Bulk SMS',
+        description: 'OTPs, alerts, promotions, and transactional messages',
+        icon: MessageSquare,
+        href: '/services/bulk-sms',
+        color: 'text-green-500'
+      },
+      {
+        title: 'WhatsApp Business API',
+        description: 'Automate conversations and notifications at scale',
+        icon: MessageCircle,
+        href: '/services/whatsapp',
+        color: 'text-emerald-500'
+      },
+      {
+        title: 'Email Marketing',
+        description: 'Targeted campaigns and automated email sequences',
+        icon: Mail,
+        href: '/services/email-marketing',
+        color: 'text-yellow-500'
+      },
+      {
+        title: 'All Communications',
+        description: 'Overview of every communications service',
         icon: Zap,
-        href: '#design-system'
+        href: '/services/communications',
+        color: 'text-orange-500'
       }
     ]
   }
 ]
 
 export function MegaMenu() {
+  const pathname = usePathname()
+
   return (
-    <div className="w-[700px] max-w-[95vw] p-4 sm:p-6 lg:p-8 bg-background">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
+    <div className="w-[750px] max-w-[95vw] p-6 lg:p-8">
+      <div className="grid grid-cols-3 gap-8">
         {menuSections.map((section) => (
-          <div key={section.title} className="space-y-4 lg:space-y-6">
-            {/* Section Header */}
-            <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
+          <div key={section.title} className="space-y-4">
+            <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
               {section.title}
             </h3>
 
-            {/* Section Links */}
-            <div className="space-y-3 lg:space-y-4">
+            <div className="space-y-1">
               {section.items.map((item) => (
-                <a
+                <Link
                   key={item.title}
                   href={item.href}
-                  className="group block space-y-1 lg:space-y-2 hover:bg-accent rounded-md p-2 lg:p-3 -mx-2 lg:-mx-3 transition-colors my-0"
+                  className={`group flex items-start gap-3 rounded-md p-2 -mx-2 transition-colors ${pathname === item.href ? 'bg-accent' : 'hover:bg-accent'}`}
                 >
-                  <div className="flex items-center gap-2 lg:gap-3">
-                    <item.icon className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                    <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                  <item.icon className={`w-4 h-4 mt-0.5 shrink-0 ${item.color} group-hover:scale-110 transition-transform`} />
+                  <div>
+                    <p className={`text-sm font-medium transition-colors leading-none mb-1 ${pathname === item.href ? 'text-primary' : 'text-foreground group-hover:text-primary'}`}>
                       {item.title}
-                    </span>
+                    </p>
+                    <p className="text-xs text-muted-foreground leading-snug">
+                      {item.description}
+                    </p>
                   </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed ml-6 lg:ml-7">
-                    {item.description}
-                  </p>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="mt-6 pt-4 border-t">
+        <Link
+          href="/services"
+          className="text-sm font-medium text-primary hover:underline"
+        >
+          View all services →
+        </Link>
       </div>
     </div>
   )

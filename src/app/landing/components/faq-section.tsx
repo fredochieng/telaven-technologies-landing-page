@@ -14,9 +14,9 @@ type FaqItem = {
 const faqItems: FaqItem[] = [
   {
     value: 'item-1',
-    question: 'What is Costware and how is it different from off-the-shelf software?',
+    question: 'What is custom enterprise software and how is it different from off-the-shelf solutions?',
     answer:
-      'Costware is our term for custom-built enterprise software — ERP, CRM, POS, HR management, and other business systems tailored precisely to your workflows and requirements. Unlike generic off-the-shelf solutions, Costware is engineered around how your business actually operates, eliminating costly workarounds, unused features, and licensing fees that grow with your team.',
+      'Custom enterprise software is built from the ground up specifically for your business — covering ERP, CRM, POS, HR management, and other systems tailored precisely to your workflows. Unlike generic off-the-shelf tools, custom software is engineered around how your business actually operates, eliminating costly workarounds, unused features, and per-seat licensing fees that balloon as your team grows.',
   },
   {
     value: 'item-2',
@@ -46,7 +46,25 @@ const faqItems: FaqItem[] = [
     value: 'item-6',
     question: 'How long does a typical project take and what does it cost?',
     answer:
-      'Project timelines and costs vary based on complexity and scope. A simple website can be delivered in 2–4 weeks, while a full Costware system or AI solution may take 3–6 months. We offer flexible engagement models including fixed-price projects, time-and-materials, and ongoing retainer arrangements. Contact us for a free consultation and tailored quote.',
+      'Project timelines and costs vary based on complexity and scope. A simple website can be delivered in 2–4 weeks, while a full custom enterprise system or AI solution may take 3–6 months. We offer flexible engagement models including fixed-price projects, time-and-materials, and ongoing retainer arrangements. Contact us for a free consultation and tailored quote.',
+  },
+  {
+    value: 'item-7',
+    question: 'Do you offer Bulk SMS and WhatsApp Business API solutions?',
+    answer:
+      'Yes. We provide bulk SMS services for mass messaging campaigns — OTPs, alerts, promotions, and transactional notifications — with high delivery rates across all major carriers. We also implement the official WhatsApp Business API, enabling you to automate customer conversations, send rich media notifications, run support at scale, and integrate WhatsApp directly into your existing systems.',
+  },
+  {
+    value: 'item-8',
+    question: 'What does your email marketing service include?',
+    answer:
+      'Our email marketing service covers campaign design, audience segmentation, automated drip sequences, transactional email setup, and performance analytics. We integrate with leading platforms or build custom solutions depending on your needs — helping you nurture leads, retain customers, and drive repeat business through well-timed, targeted email communication.',
+  },
+  {
+    value: 'item-9',
+    question: 'Can you integrate our existing tools and platforms?',
+    answer:
+      'Absolutely. We specialize in system integrations — connecting your CRM, ERP, payment gateways, e-commerce platforms, third-party APIs, and other business tools into a unified, automated workflow. Whether you need a simple webhook setup or a complex multi-system integration, we architect it to be reliable, maintainable, and scalable.',
   },
 ]
 
@@ -61,7 +79,7 @@ const FaqSection = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-muted-foreground">
-            Everything you need to know about our services — Costware, AI/ML, data solutions, web development, and mobile apps. Still have questions? We&apos;re here to help!
+            Everything you need to know about our services — AI/ML, data solutions, custom software, web development, and mobile apps. Still have questions? We&apos;re here to help!
           </p>
         </div>
 

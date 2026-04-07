@@ -12,7 +12,7 @@ export function CookiesPageContent() {
       <section>
         <h2 className="text-xl font-semibold mb-3">1. What Are Cookies</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Cookies are small text files that are placed on your device when you visit a website. They are widely used to make websites work efficiently and to provide information to the site owners. Telaven Technologies uses cookies and similar technologies to ensure the proper functioning of our platform.
+          Cookies are small text files that are placed on your device when you visit a website. They are widely used to make websites work efficiently and to provide information to the site owners. Telaven Solutions uses cookies and similar technologies to ensure the proper functioning of our platform.
         </p>
       </section>
 
@@ -42,7 +42,7 @@ export function CookiesPageContent() {
       <section>
         <h2 className="text-xl font-semibold mb-3">3. Cookies We Do Not Use</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Telaven Technologies does <strong>not</strong> use third-party advertising cookies, tracking cookies, or social media cookies. We do not participate in ad networks or sell data to advertisers. Your browsing activity on our platform is not tracked for advertising purposes.
+          Telaven Solutions does <strong>not</strong> use third-party advertising cookies, tracking cookies, or social media cookies. We do not participate in ad networks or sell data to advertisers. Your browsing activity on our platform is not tracked for advertising purposes.
         </p>
       </section>
 

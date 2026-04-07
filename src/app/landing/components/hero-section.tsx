@@ -21,7 +21,7 @@ export function HeroSection() {
           <div className="mb-8 flex justify-center">
             <Badge variant="outline" className="px-4 py-2 border-foreground">
               <Zap className="w-3 h-3 mr-2 fill-current" />
-              Costware · Web · Data · AI/ML · Mobile Apps
+              Custom Software · Web · Data · AI/ML · Mobile · Communications
               <ArrowRight className="w-3 h-3 ml-2" />
             </Badge>
           </div>
@@ -37,7 +37,7 @@ export function HeroSection() {
 
           {/* Subheading */}
           <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground sm:text-xl">
-            From custom enterprise software (Costware) and AI/ML to web development, data solutions, and mobile apps — we build intelligent, scalable technology that transforms how your business operates and grows.
+            From custom enterprise software and AI/ML to web development, data solutions, and mobile apps — we build intelligent, scalable technology that transforms how your business operates and grows.
           </p>
 
           {/* CTA Buttons */}
@@ -65,13 +65,13 @@ export function HeroSection() {
             <div className="relative rounded-xl border bg-card shadow-2xl overflow-hidden">
               <img
                 src="/dash-1-light.jpeg"
-                alt="Telaven Technologies - Enterprise Technology Platform"
+                alt="Telaven Solutions - Enterprise Technology Platform"
                 className="w-full rounded-xl object-cover block dark:hidden"
               />
 
               <img
                 src="/dash-1-dark.png"
-                alt="Telaven Technologies - Enterprise Technology Platform"
+                alt="Telaven Solutions - Enterprise Technology Platform"
                 className="w-full rounded-xl object-cover hidden dark:block"
               />
 

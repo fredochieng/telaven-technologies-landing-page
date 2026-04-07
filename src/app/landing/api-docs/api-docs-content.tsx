@@ -129,7 +129,7 @@ export function ApiDocsPageContent() {
             <Badge variant="outline" className="mb-4">Developer</Badge>
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl mb-3">API Documentation</h1>
             <p className="text-muted-foreground text-lg">
-              Access your Telaven Technologies project data programmatically using our REST API.
+              Access your Telaven Solutions project data programmatically using our REST API.
             </p>
           </div>
 

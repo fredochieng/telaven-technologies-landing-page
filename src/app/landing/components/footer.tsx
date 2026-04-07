@@ -25,10 +25,11 @@ const newsletterSchema = z.object({
 
 const footerLinks = {
   services: [
-    { name: 'Costware', href: '#features' },
+    { name: 'Custom Enterprise Software', href: '#features' },
     { name: 'AI & Machine Learning', href: '#features' },
     { name: 'Data Solutions', href: '#features' },
     { name: 'Mobile Apps', href: '#features' },
+    { name: 'Web Design & Dev', href: '#features' },
   ],
   company: [
     { name: 'About', href: '#about' },
@@ -37,10 +38,11 @@ const footerLinks = {
     { name: 'Blog', href: '#blog' },
   ],
   solutions: [
-    { name: 'Web Design & Dev', href: '#features' },
-    { name: 'Data Analytics & BI', href: '#features' },
+    { name: 'Bulk SMS', href: '#features' },
+    { name: 'WhatsApp Business API', href: '#features' },
+    { name: 'Email Marketing', href: '#features' },
+    { name: 'System Integrations', href: '#features' },
     { name: 'IT Consultancy', href: '#features' },
-    { name: 'Enterprise Security', href: '#features' },
   ],
   legal: [
     { name: 'Privacy', href: '/landing/privacy' },
@@ -115,7 +117,7 @@ export function LandingFooter() {
               </a>
             </div>
             <p className="text-muted-foreground mb-6 max-lg:text-center max-lg:flex max-lg:justify-center">
-              Costware, AI/ML, Data Solutions, Web Development, and Mobile Apps — enterprise technology that transforms your business.
+              Custom Enterprise Software, AI/ML, Data Solutions, Web Development, and Mobile Apps — enterprise technology that transforms your business.
             </p>
             <div className="flex space-x-4 max-lg:justify-center">
               {socialLinks.map((social) => (
@@ -167,7 +169,7 @@ export function LandingFooter() {
         {/* Bottom Footer */}
         <div className="flex flex-col lg:flex-row justify-between items-center gap-2">
           <div className="flex flex-col sm:flex-row items-center gap-2 text-muted-foreground text-sm">
-            <span>© {new Date().getFullYear()} Telaven Technologies. All rights reserved.</span>
+            <span>© {new Date().getFullYear()} Telaven Solutions. All rights reserved.</span>
           </div>
           <div className="flex items-center space-x-4 text-sm text-muted-foreground mt-4 md:mt-0">
             <Link href="/landing/privacy" className="hover:text-foreground transition-colors">

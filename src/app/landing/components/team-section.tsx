@@ -13,7 +13,7 @@ const team = [
     id: 1,
     name: 'Fredrick Owuor',
     role: 'Founder & CEO',
-    description: 'Technologist and entrepreneur driving Telaven Technologies\' mission to deliver intelligent, enterprise-grade software across Africa and beyond.',
+    description: 'Technologist and entrepreneur driving Telaven Solutions\' mission to deliver intelligent, enterprise-grade software across Africa and beyond.',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=60&w=150&auto=format&fit=crop',
     fallback: 'FO',
     social: {
@@ -26,7 +26,7 @@ const team = [
     id: 2,
     name: 'Sarah Kimani',
     role: 'Head of Engineering',
-    description: 'Full-stack engineer with 8+ years building scalable platforms — from custom Costware systems to cloud-native data pipelines.',
+    description: 'Full-stack engineer with 8+ years building scalable platforms — from custom enterprise systems to cloud-native data pipelines.',
     image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?q=60&w=150&auto=format&fit=crop',
     fallback: 'SK',
     social: {
@@ -73,7 +73,7 @@ export function TeamSection() {
             Our Team
           </Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
-            Meet the Telaven Technologies Team
+            Meet the Telaven Solutions Team
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
             A focused team of engineers, designers, and AI specialists building enterprise technology solutions that make a measurable difference.
